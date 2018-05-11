@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:title="System?"
+        android:summary="%s"
+        android:entries="@array/Systems"
+        android:entryValues="@array/Systems"
+        android:key="SystemNames"
+        android:negativeButtonText=""
+        ></ListPreference>
+    <ListPreference
+        android:title="What prices?"
+        android:summary="%s"
+        android:entries="@array/BS"
+        android:entryValues="@array/BS"
+        android:key="BS"
+        android:negativeButtonText=""
+        ></ListPreference>
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="Perc"
+        android:title="@string/Perc"
+        android:inputType="numberDecimal"
+        />
+
+    <PreferenceScreen
+        android:title="Add custom ice prices"
+        android:summary="@string/CustomText">
+        <EditTextPreference
+
+            android:key="CustomSI1"
+            android:title="Clear Icicle"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI2"
+            android:title="White Glaze"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI3"
+            android:title="Blue Ice"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI4"
+            android:title="Glacial Mass"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI5"
+            android:title="Enriched Clear Icicle"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI6"
+            android:title="Pristine White Glaze"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI7"
+            android:title="Thick Blue Ice"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI8"
+            android:title="Smooth Glacial Mass"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI9"
+            android:title="Glare Crust"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI10"
+            android:title="Dark Glitter"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI11"
+            android:title="Gelidus"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+
+            android:key="CustomSI1"
+            android:title="Krystallos"
+            android:inputType="numberDecimal"
+            />
+
+
+
+    </PreferenceScreen>
+
+    <EditTextPreference
+        android:defaultValue="300"
+        android:inputType="numberDecimal"
+        android:key="TimeIce"
+        android:title="Duration of ice cycle in seconds" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="MinIce"
+        android:title="@string/Min"
+        android:inputType="number"
+        />
+
+
+</PreferenceScreen>

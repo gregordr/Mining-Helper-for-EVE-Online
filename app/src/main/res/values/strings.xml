@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">EVE Mining Calc</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_systemC">Select market</string>
+
+    <string name="dialog_message">Sort by</string>
+    <string name="action_sort">Sort by...</string>
+    <string name="action_oreC">Choose ore</string>
+    <string name="SystemCtext">Specify market settings</string>
+    <string name="OreCtext">Select your ores</string>
+    <string name="Mercoxit">Mercoxit</string>
+    <string name="Show_variants">Show variants</string>
+    <string name="Bistot">Bistot</string>
+    <string name="Dark_Ochre">Dark Ochre</string>
+    <string name="Crokite">Crokite</string>
+    <string name="Hemorphite">Hemorphite</string>
+    <string name="Arkonor">Arkonor</string>
+    <string name="Hedbergite">Hedbergite</string>
+    <string name="Jaspet">Jaspet</string>
+    <string name="Gneiss">Gneiss</string>
+    <string name="Kernite">Kernite</string>
+    <string name="Omber">Omber</string>
+    <string name="Plagioclase">Plagioclase</string>
+    <string name="Pyroxeres">Pyroxeres</string>
+    <string name="Scordite">Scordite</string>
+    <string name="Spodumain">Spodumain</string>
+    <string name="Veldspar">Veldspar</string>
+    <string name="isk_per_m">ISK per m<small><sup>3</sup></small></string>
+    <string name="action_about">About</string>
+    <string name="AboutText">About Eve Mining Calc</string>
+    <string name="MiningP">Volume mined per cycle</string>
+    <string name="banner_ad_unit_id">ca-app-pub-9319544299593604/2766032178</string>
+    <string name="Perc">Adjust price in percent</string>
+    <string name="Custom">Add custom prices</string>
+    <string name="CustomText">Make sure to select Custom in Prices option</string>
+    <string name="Time">Duration of cycle in seconds</string>
+    <string name="Min">Number of Miners</string>
+    <string name="action_ice">Go to ice</string>
+</resources>

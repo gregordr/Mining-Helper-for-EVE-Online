@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc.OreC">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:onClick="openSelection"
+                android:text="System"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <CheckBox
+                android:id="@+id/C32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC32"
+                android:text="C32"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C28" />
+
+            <CheckBox
+                android:id="@+id/C60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC60"
+                android:text="C60"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C50" />
+
+            <CheckBox
+                android:id="@+id/C50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC50"
+                android:text="C50"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C32" />
+
+            <CheckBox
+                android:id="@+id/C84"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC84"
+                android:text="C84"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C72" />
+
+            <CheckBox
+                android:id="@+id/C28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="setC28"
+                android:text="C28"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+
+            <CheckBox
+                android:id="@+id/C72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC72"
+                android:text="C72"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C70" />
+
+            <CheckBox
+                android:id="@+id/C70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC70"
+                android:text="C70"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C60" />
+
+            <CheckBox
+                android:id="@+id/C320"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC320"
+                android:text="C320"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C84" />
+
+            <CheckBox
+                android:id="@+id/C540"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setC540"
+                android:text="C540"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C320" />
+
+            <CheckBox
+                android:id="@+id/Amber_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:onClick="setAmber_Cytoserocin"
+                android:text="Amber Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/C540" />
+
+            <CheckBox
+                android:id="@+id/Azure_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setAzure_Cytoserocin"
+                android:text="Azure Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Amber_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Celadon_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:onClick="setCeladon_Cytoserocin"
+                android:text="Celadon Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Azure_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Golden_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setGolden_Cytoserocin"
+                android:text="Golden Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Celadon_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Lime_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setLime_Cytoserocin"
+                android:text="Lime Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Golden_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Malachite_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setMalachite_Cytoserocin"
+                android:text="Malachite Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Lime_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Vermillion_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setVermillion_Cytoserocin"
+                android:text="Vermillion Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Malachite_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Viridian_Cytoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setViridian_Cytoserocin"
+                android:text="Viridian Cytoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Vermillion_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Amber_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:onClick="setAmber_Mykoserocin"
+                android:text="Amber Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Viridian_Cytoserocin" />
+
+            <CheckBox
+                android:id="@+id/Azure_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setAzure_Mykoserocin"
+                android:text="Azure Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Amber_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Celadon_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setCeladon_Mykoserocin"
+                android:text="Celadon Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Azure_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Golden_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setGolden_Mykoserocin"
+                android:text="Golden Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Celadon_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Lime_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setLime_Mykoserocin"
+                android:text="Lime Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Golden_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Malachite_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setMalachite_Mykoserocin"
+                android:text="Malachite Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Lime_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Vermillion_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setVermillion_Mykoserocin"
+                android:text="Vermillion Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Malachite_Mykoserocin" />
+
+            <CheckBox
+                android:id="@+id/Viridian_Mykoserocin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:onClick="setViridian_Mykoserocin"
+                android:text="Viridian Mykoserocin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Vermillion_Mykoserocin" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

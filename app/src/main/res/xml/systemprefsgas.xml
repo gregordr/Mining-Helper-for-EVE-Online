@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:title="System?"
+        android:summary="%s"
+        android:entries="@array/Systems"
+        android:entryValues="@array/Systems"
+        android:key="SystemNames"
+        android:negativeButtonText=""
+        ></ListPreference>
+    <ListPreference
+        android:title="What prices?"
+        android:summary="%s"
+        android:entries="@array/BS"
+        android:entryValues="@array/BS"
+        android:key="BS"
+        android:negativeButtonText=""
+        ></ListPreference>
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="Perc"
+        android:title="@string/Perc"
+        android:inputType="numberDecimal"
+        />
+
+    <PreferenceScreen
+        android:title="Add custom gas prices"
+        android:summary="@string/CustomText">
+
+        <EditTextPreference
+            android:key="CustomSG1"
+            android:title="C28"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG2"
+            android:title="C32"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG3"
+            android:title="C50"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG4"
+            android:title="C60"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG5"
+            android:title="C70"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG6"
+            android:title="C72"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG7"
+            android:title="C84"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG8"
+            android:title="C320"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG9"
+            android:title="C540"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG10"
+            android:title="Amber Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG11"
+            android:title="Azure Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG12"
+            android:title="Celadon Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG3"
+            android:title="Golden Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG14"
+            android:title="Lime Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG15"
+            android:title="Malachite Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG16"
+            android:title="Vermillion Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG17"
+            android:title="Viridian Cytoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG18"
+            android:title="Amber Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG19"
+            android:title="Azure Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG20"
+            android:title="Celadon Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG21"
+            android:title="Golden Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG22"
+            android:title="Lime Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG23"
+            android:title="Malachite Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG24"
+            android:title="Vermillion Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+        <EditTextPreference
+            android:key="CustomSG25"
+            android:title="Viridian Mykoserocin"
+            android:inputType="numberDecimal"
+            />
+
+
+
+    </PreferenceScreen>
+
+    <EditTextPreference
+        android:defaultValue="10"
+        android:key="AmountGas"
+        android:title="Gas mined per cycle"
+        android:inputType="numberDecimal"
+        />
+
+    <EditTextPreference
+        android:defaultValue="30"
+        android:inputType="numberDecimal"
+        android:key="TimeGas"
+        android:title="Duration of gas cycle in seconds" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="MinG"
+        android:title="@string/Min"
+        android:inputType="number"
+        />
+
+
+</PreferenceScreen>

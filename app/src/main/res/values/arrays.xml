@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sortOptions">
+        <item>Price per m<sup>3</sup></item>
+        <item>Price</item>
+        <item>Alphabetically</item>
+    </string-array>
+
+    <string-array name="BS">
+        <item>Compressed Sell</item>
+        <item>Compressed Buy</item>
+        <item>Uncompressed Sell</item>
+        <item>Uncompressed Buy</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="nums">
+        <item>22</item><item>1223</item><item>1225</item><item>1232</item><item>1229</item><item>21</item><item>1231</item><item>1226</item><item>20</item><item>11396</item><item>1227</item><item>18</item><item>1224</item><item>1228</item><item>19</item><item>1230</item><item>17425</item><item>17428</item><item>17432</item><item>17436</item><item>17865</item><item>17440</item><item>17444</item><item>17448</item><item>17452</item><item>17869</item><item>17867</item><item>17455</item><item>17459</item><item>17463</item><item>17466</item><item>17470</item><item>17426</item><item>17429</item><item>17433</item><item>17437</item><item>17866</item><item>17441</item><item>17445</item><item>17449</item><item>17453</item><item>17870</item><item>17868</item><item>17456</item><item>17460</item><item>17464</item><item>17467</item><item>17471</item><item>28367</item><item>28388</item><item>28391</item><item>28394</item><item>28397</item><item>28401</item><item>28403</item><item>28406</item><item>28410</item><item>28413</item><item>28416</item><item>28422</item><item>28424</item><item>28429</item><item>28420</item><item>28432</item><item>28385</item><item>28389</item><item>28392</item><item>28395</item><item>28398</item><item>28400</item><item>28404</item><item>28407</item><item>28409</item><item>28412</item><item>28415</item><item>28421</item><item>28425</item><item>28427</item><item>28418</item><item>28430</item><item>28387</item><item>28390</item><item>28393</item><item>28396</item><item>28399</item><item>28402</item><item>28405</item><item>28408</item><item>28411</item><item>28414</item><item>28417</item><item>28423</item><item>28426</item><item>28428</item><item>28419</item><item>28431</item>
+    </string-array>
+
+    <string-array name="Systems">
+        <item>Jita</item>
+        <item>Amarr</item>
+        <item>Rens</item>
+        <item>Dodixie</item>
+        <item>Hek</item>
+    </string-array>
+
+    <string-array name="Names">
+        <item>Not a valid value</item>
+        <item>Arkonor</item>
+        <item>Bistot</item>
+        <item>Crokite</item>
+        <item>Dark Ochre</item>
+        <item>Gneiss</item>
+        <item>Hedbergite</item>
+        <item>Hemorphite</item>
+        <item>Jaspet</item>
+        <item>Kernite</item>
+        <item>Mercoxit</item>
+        <item>Omber</item>
+        <item>Plagioclase</item>
+        <item>Pyroxeres</item>
+        <item>Scordite</item>
+        <item>Spodumain</item>
+        <item>Veldspar</item>
+        <item>Arkonor+5%</item>
+        <item>Bistot+5%</item>
+        <item>Crokite+5%</item>
+        <item>Dark Ochre+5%</item>
+        <item>Gneiss+5%</item>
+        <item>Hedbergite+5%</item>
+        <item>Hemorphite+5%</item>
+        <item>Jaspet+5%</item>
+        <item>Kernite+5%</item>
+        <item>Mercoxit+5%</item>
+        <item>Omber+5%</item>
+        <item>Plagioclase+5%</item>
+        <item>Pyroxeres+5%</item>
+        <item>Scordite+5%</item>
+        <item>Spodumain+5%</item>
+        <item>Veldspar+5%</item>
+        <item>Arkonor+10%</item>
+        <item>Bistot+10%</item>
+        <item>Crokite+10%</item>
+        <item>Dark Ochre+10%</item>
+        <item>Gneiss+10%</item>
+        <item>Hedbergite+10%</item>
+        <item>Hemorphite+10%</item>
+        <item>Jaspet+10%</item>
+        <item>Kernite+10%</item>
+        <item>Mercoxit+10%</item>
+        <item>Omber+10%</item>
+        <item>Plagioclase+10%</item>
+        <item>Pyroxeres+10%</item>
+        <item>Scordite+10%</item>
+        <item>Spodumain+10%</item>
+        <item>Veldspar+10%</item>
+    </string-array>
+
+
+
+    <string-array name="Vol">
+    <item>0</item>
+    <item>16</item>
+    <item>16</item>
+    <item>16</item>
+    <item>8</item>
+    <item>5</item>
+    <item>3</item>
+    <item>3</item>
+    <item>2</item>
+    <item>1.2</item>
+    <item>40</item>
+    <item>0.6</item>
+    <item>0.35</item>
+    <item>0.3</item>
+    <item>0.15</item>
+    <item>16</item>
+    <item>0.1</item>
+    <item>16</item>
+    <item>16</item>
+    <item>16</item>
+    <item>8</item>
+    <item>5</item>
+    <item>3</item>
+    <item>3</item>
+    <item>2</item>
+    <item>1.2</item>
+    <item>40</item>
+    <item>0.6</item>
+    <item>0.35</item>
+    <item>0.3</item>
+    <item>0.15</item>
+    <item>16</item>
+    <item>0.1</item>
+    <item>16</item>
+    <item>16</item>
+    <item>16</item>
+    <item>8</item>
+    <item>5</item>
+    <item>3</item>
+    <item>3</item>
+    <item>2</item>
+    <item>1.2</item>
+    <item>40</item>
+    <item>0.6</item>
+    <item>0.35</item>
+    <item>0.3</item>
+    <item>0.15</item>
+    <item>16</item>
+    <item>0.1</item>
+    </string-array>
+
+    <string-array name="NamesI">
+        <item>Not a valid value</item>
+        <item>Clear Icicle</item>
+        <item>White Glaze</item>
+        <item>Blue Ice</item>
+        <item>Glacial Mass</item>
+        <item>Enriched Clear Icicle</item>
+        <item>Pristine White Glaze</item>
+        <item>Thick Blue Ice</item>
+        <item>Smooth Glacial Mass</item>
+        <item>Glare Crust</item>
+        <item>Dark Glitter</item>
+        <item>Gelidus</item>
+        <item>Krystallos</item>
+    </string-array>
+
+    <string-array name="numsI">
+        <item>16262</item><item>16265</item><item>16264</item><item>16263</item><item>17978</item><item>17976</item><item>17975</item><item>17977</item><item>16266</item><item>16267</item><item>16268</item><item>16269</item><item>28434</item><item>28444</item><item>28433</item><item>28438</item><item>28436</item><item>28441</item><item>28443</item><item>28442</item><item>28439</item><item>28435</item><item>28437</item><item>28440</item>
+    </string-array>
+
+    <string-array name="NamesG">
+        <item>Not a valid value</item>
+
+        <item>C28</item>
+        <item>C32</item>
+        <item>C50</item>
+        <item>C60</item>
+        <item>C70</item>
+        <item>C72</item>
+        <item>C84</item>
+        <item>C320</item>
+        <item>C540</item>
+
+        <item>Amber Cytoserocin</item>
+        <item>Azure Cytoserocin</item>
+        <item>Celadon Cytoserocin</item>
+        <item>Golden Cytoserocin</item>
+        <item>Lime Cytoserocin</item>
+        <item>Malachite Cytoserocin</item>
+        <item>Vermillion Cytoserocin</item>
+        <item>Viridian Cytoserocin</item>
+
+        <item>Amber Mykoserocin</item>
+        <item>Azure Mykoserocin</item>
+        <item>Celadon Mykoserocin</item>
+        <item>Golden Mykoserocin</item>
+        <item>Lime Mykoserocin</item>
+        <item>Malachite Mykoserocin</item>
+        <item>Vermillion Mykoserocin</item>
+        <item>Viridian Mykoserocin</item>
+    </string-array>
+
+    <string-array name="numsG">
+        <item>30375</item><item>30376</item><item>30370</item><item>30371</item><item>30372</item><item>30373</item><item>30374</item><item>30377</item><item>30378</item>
+        <item>25268</item><item>25279</item><item>25275</item><item>25273</item><item>25277</item><item>25276</item><item>25278</item><item>25274</item>
+        <item>28694</item><item>28695</item><item>28696</item><item>28697</item><item>28698</item><item>28699</item><item>28700</item><item>28701</item>
+    </string-array>
+
+    <string-array name="VolG">
+        <item>0</item>
+        <item>2</item>
+        <item>5</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+        <item>10</item>
+    </string-array>
+
+</resources>

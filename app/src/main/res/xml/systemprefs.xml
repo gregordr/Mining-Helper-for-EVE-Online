@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:title="System?"
+        android:summary="%s"
+        android:entries="@array/Systems"
+        android:entryValues="@array/Systems"
+        android:key="SystemNames"
+        android:negativeButtonText=""
+        ></ListPreference>
+    <ListPreference
+        android:title="What prices?"
+        android:summary="%s"
+        android:entries="@array/BS"
+        android:entryValues="@array/BS"
+        android:key="BS"
+        android:negativeButtonText=""
+        ></ListPreference>
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="Perc"
+        android:title="@string/Perc"
+        android:inputType="numberDecimal"
+        />
+
+    <PreferenceScreen
+        android:title="@string/Custom"
+        android:summary="@string/CustomText">
+        <EditTextPreference
+            
+            android:key="CustomS1"
+            android:title="Arkonor"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS2"
+            android:title="Bistot"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS3"
+            android:title="Crokite"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS4"
+            android:title="Dark Ochre"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS5"
+            android:title="Gneiss"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS6"
+            android:title="Hedbergite"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS7"
+            android:title="Hemorphite"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS8"
+            android:title="Jaspet"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS9"
+            android:title="Kernite"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS10"
+            android:title="Mercoxit"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS11"
+            android:title="Omber"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS12"
+            android:title="Plagioclase"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS13"
+            android:title="Pyroxeres"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS14"
+            android:title="Scordite"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS15"
+            android:title="Spodumain"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS16"
+            android:title="Veldspar"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS17"
+            android:title="Arkonor+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS18"
+            android:title="Bistot+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS19"
+            android:title="Crokite+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS20"
+            android:title="Dark Ochre+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS21"
+            android:title="Gneiss+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS22"
+            android:title="Hedbergite+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS23"
+            android:title="Hemorphite+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS24"
+            android:title="Jaspet+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS25"
+            android:title="Kernite+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS26"
+            android:title="Mercoxit+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS27"
+            android:title="Omber+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS28"
+            android:title="Plagioclase+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS29"
+            android:title="Pyroxeres+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS30"
+            android:title="Scordite+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS31"
+            android:title="Spodumain+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS32"
+            android:title="Veldspar+5%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS33"
+            android:title="Arkonor+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS34"
+            android:title="Bistot+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS35"
+            android:title="Crokite+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS36"
+            android:title="Dark Ochre+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS37"
+            android:title="Gneiss+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS38"
+            android:title="Hedbergite+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS39"
+            android:title="Hemorphite+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS40"
+            android:title="Jaspet+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS41"
+            android:title="Kernite+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS42"
+            android:title="Mercoxit+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS43"
+            android:title="Omber+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS44"
+            android:title="Plagioclase+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS45"
+            android:title="Pyroxeres+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS46"
+            android:title="Scordite+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS47"
+            android:title="Spodumain+10%"
+            android:inputType="numberDecimal"
+            />
+        <EditTextPreference
+            
+            android:key="CustomS48"
+            android:title="Veldspar+10%"
+            android:inputType="numberDecimal"
+            />
+
+
+
+
+    </PreferenceScreen>
+
+    <EditTextPreference
+        android:defaultValue="1500"
+        android:key="MPC"
+        android:title="@string/MiningP"
+        android:inputType="numberDecimal"
+        />
+
+    <EditTextPreference
+        android:defaultValue="120"
+        android:key="Time"
+        android:title="@string/Time"
+        android:inputType="numberDecimal"
+        />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:key="Min"
+        android:title="@string/Min"
+        android:inputType="number"
+        />
+
+
+</PreferenceScreen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@mipmap/ic_refresh"
+        android:title="@string/action_refresh"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@mipmap/ic_sort"
+        android:title="@string/action_sort"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settingsIce"
+        android:title="@string/action_systemC"
+        android:icon="@mipmap/ic_settings"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_iceChoice"
+        android:title="Chose Gas"
+        android:icon="@mipmap/ic_settings"
+        app:showAsAction="never"
+        />
+   <item
+        android:id="@+id/action_backtoOre"
+        android:title="Go to ore"
+        android:icon="@mipmap/ic_settings"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_ice"
+        android:title="Go to ice"
+        android:icon="@mipmap/ic_settings"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/action_about"
+        android:icon="@mipmap/ic_settings"
+        app:showAsAction="never"
+        />
+
+
+</menu>
