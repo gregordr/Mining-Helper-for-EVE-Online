@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         super.onCreate(savedInstanceState);
 
         if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Ice",false)) {
-            Intent iceintent = new Intent (this, ice.class);
+            Intent iceintent = new Intent (this, Ice.class);
             finish();
             startActivity(iceintent);
             this.overridePendingTransition(0, 0);

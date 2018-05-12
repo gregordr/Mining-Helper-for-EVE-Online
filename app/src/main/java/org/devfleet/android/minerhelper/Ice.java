@@ -35,7 +35,7 @@ import java.net.URL;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class ice extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class Ice extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     GreenAdapter mAdapter;
     RecyclerView mNumbersList;
@@ -115,7 +115,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     }
 
     public void launchice() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
         editor.putBoolean("Ice",false);
@@ -128,7 +128,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     }
 
     public void launchgas() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
         editor.putBoolean("Ice",false);
@@ -169,11 +169,11 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     }
 
     public void sortBy() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ice.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Ice.this);
         builder.setTitle(R.string.dialog_message);
         builder.setItems(R.array.sortOptions, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 switch (which) {
                     case 0:
@@ -372,7 +372,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
         SharedPreferences sharedPref;
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
         }
 
         @Override
@@ -416,7 +416,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
             if (sharedPref.getBoolean("Clear_Icicle", true)) {
                 i++;
             }
@@ -563,7 +563,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     int Sort[]= new int[13];
 
     public void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
         int i=1;
         for(int c=1; !(c==13) ;c++) {
             switch (c) {

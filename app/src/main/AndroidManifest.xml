@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.ice"
+            android:name="org.devfleet.android.minerhelper.Ice"
             android:label="Ice"
             android:launchMode="singleTop">
         </activity>
@@ -41,7 +41,7 @@
         <activity
             android:name="org.devfleet.android.minerhelper.SystemCice"
             android:label="@string/SystemCtext"
-            android:parentActivityName="org.devfleet.android.minerhelper.ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
             android:launchMode="singleTop">
         </activity>
         <activity
@@ -62,7 +62,7 @@
         <activity
             android:name="org.devfleet.android.minerhelper.OreCice"
             android:label="Select ice"
-            android:parentActivityName="org.devfleet.android.minerhelper.ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
             android:launchMode="singleTop">
         </activity>
         <activity
