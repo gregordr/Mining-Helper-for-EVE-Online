@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc">
+    package="org.devfleet.android.minerhelper">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="org.devfleet.android.minerhelper.MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,65 +20,65 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ice"
+            android:name="org.devfleet.android.minerhelper.Ice"
             android:label="Ice"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".Gasactivity"
+            android:name="org.devfleet.android.minerhelper.Gasactivity"
             android:label="Gas"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".SystemC"
+            android:name="org.devfleet.android.minerhelper.SystemC"
             android:label="@string/SystemCtext"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.MainActivity" />
         </activity>
         <activity
-            android:name=".SystemCice"
+            android:name="org.devfleet.android.minerhelper.SystemCice"
             android:label="@string/SystemCtext"
-            android:parentActivityName=".ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".SystemCgas"
-            android:parentActivityName=".Gasactivity">
+            android:name="org.devfleet.android.minerhelper.SystemCgas"
+            android:parentActivityName="org.devfleet.android.minerhelper.Gasactivity">
             android:label="@string/SystemCtext"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".OreC"
+            android:name="org.devfleet.android.minerhelper.OreC"
             android:label="@string/OreCtext"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.MainActivity" />
         </activity>
         <activity
-            android:name=".OreCice"
+            android:name="org.devfleet.android.minerhelper.OreCice"
             android:label="Select ice"
-            android:parentActivityName=".ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".OreCgas"
+            android:name="org.devfleet.android.minerhelper.OreCgas"
             android:label="Select gas"
-            android:parentActivityName=".Gasactivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.Gasactivity">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name=".About"
+            android:name="org.devfleet.android.minerhelper.About"
             android:label="@string/AboutText"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.MainActivity" />
         </activity>
     </application>
 

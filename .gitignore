@@ -1,0 +1,8 @@
+.idea/
+app/build/
+app/local.properties
+app/app.iml
+build/
+.gradle/
+local.properties
+Mining-Helper-for-EVE-Online.iml

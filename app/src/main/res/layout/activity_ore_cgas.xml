@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc.OreC">
+    tools:context="org.devfleet.android.minerhelper.OreC">
 
     <ScrollView
         android:layout_width="0dp"

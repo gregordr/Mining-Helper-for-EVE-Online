@@ -1,4 +1,4 @@
-package com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc;
+package org.devfleet.android.minerhelper;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,13 +36,27 @@ import java.net.URL;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class ice extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     GreenAdapter mAdapter;
     RecyclerView mNumbersList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Ice",false)) {
+            Intent iceintent = new Intent (this, Ice.class);
+            finish();
+            startActivity(iceintent);
+            this.overridePendingTransition(0, 0);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Gas",false)) {
+            Intent gasintent = new Intent (this, Gasactivity.class);
+            finish();
+            startActivity(gasintent);
+            this.overridePendingTransition(0, 0);
+        }
 
         setContentView(R.layout.activity_main);
         mNumbersList = (RecyclerView) findViewById(R.id.RecV);
@@ -82,7 +97,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.buttonsice, menu);
+        inflater.inflate(R.menu.buttons, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -90,16 +105,19 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settingsIce:
+            case R.id.action_settings:
                 launchSystemC();
                 return true;
             case R.id.action_refresh:
                 refresh();
                 return true;
-            case R.id.action_iceChoice:
+            case R.id.action_sort:
+                sortBy();
+                return true;
+            case R.id.action_ore:
                 launchOreC();
                 return true;
-            case R.id.action_backtoOre:
+            case R.id.action_ice:
                 launchice();
                 return true;
             case R.id.action_gas:
@@ -115,39 +133,32 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     }
 
     public void launchice() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Ice",false);
+        editor.putBoolean("Ice",true);
         editor.commit();
 
-        Intent iceintent = new Intent (this, MainActivity.class);
-        finish();
-        startActivity(iceintent);
-        this.overridePendingTransition(0, 0);
+        recreate();
     }
 
     public void launchgas() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Ice",false);
         editor.putBoolean("Gas",true);
         editor.commit();
 
-        Intent iceintent = new Intent (this, MainActivity.class);
-        finish();
-        startActivity(iceintent);
-        this.overridePendingTransition(0, 0);
+        recreate();
     }
 
     public void launchSystemC() {
-        Intent launchSystemC = new Intent(this, SystemCice.class);
+        Intent launchSystemC = new Intent(this, SystemC.class);
         startActivity(launchSystemC);
     }
 
     public void launchOreC() {
-        Intent launchOreC = new Intent(this, OreCice.class);
+        Intent launchOreC = new Intent(this, OreC.class);
         startActivity(launchOreC);
     }
 
@@ -169,11 +180,11 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     }
 
     public void sortBy() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(ice.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.dialog_message);
         builder.setItems(R.array.sortOptions, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 switch (which) {
                     case 0:
@@ -207,11 +218,9 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
             default: SystemNum="0"; break;
         }
 
-        String base = "https://market.fuzzwork.co.uk/aggregates/?types=16262,16265,16264,16263,17978,17976,17975,17977,16266,16267,16268,16269,28434,28444,28433,28438,28436,28441,28443,28442,28439,28435,28437,28440";
+        String base = "https://market.fuzzwork.co.uk/aggregates/?types=22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431";        Uri ApiUri = Uri.parse(base).buildUpon()
 
-        Uri ApiUri = Uri.parse(base).buildUpon()
-
-                // .appendQueryParameter("types", "22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431")
+               // .appendQueryParameter("types", "22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431")
 
                 .appendQueryParameter("station", SystemNum)
                 .build();
@@ -261,7 +270,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
                 } catch (Throwable t) {                }
 
                 if(obj!=null) {
-                    getInfo(s); } else {
+                getInfo(s); } else {
                     setStatusError = true;
                 }
             } else {
@@ -278,40 +287,41 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
             obj = new JSONObject(s);
 
 
+
         } catch (Throwable t) {
 
         }
 
-        String[] nums = getResources().getStringArray(R.array .numsI);
+        String[] nums = getResources().getStringArray(R.array .nums);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=49; i++) {
             try {
-                editor.putFloat("Uncompressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed Sell" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
             }
         }
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=49; i++) {
             try {
-                editor.putFloat("Uncompressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        for (int i = 1; i!=13; i++) {
-            try {
-                editor.putFloat("Compressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed Buy" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=49; i++) {
             try {
-                editor.putFloat("Compressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Compressed Sell" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+48-1]).getJSONObject("sell").get("min")))/100);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = 1; i!=49; i++) {
+            try {
+                editor.putFloat("Compressed Buy" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+48-1]).getJSONObject("buy").get("max")))/100);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -372,7 +382,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
         SharedPreferences sharedPref;
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         }
 
         @Override
@@ -416,45 +426,58 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
-            if (sharedPref.getBoolean("Clear_Icicle", true)) {
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            if (sharedPref.getBoolean("Veldspar", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("White_Glaze", true)) {
+            if (sharedPref.getBoolean("Scordite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Blue_Ice", true)) {
+            if (sharedPref.getBoolean("Pyroxeres", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glacial_Mass", true)) {
+            if (sharedPref.getBoolean("Plagioclase", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {
+            if (sharedPref.getBoolean("Omber", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Pristine_White_Glaze", true)) {
+            if (sharedPref.getBoolean("Kernite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Thick_Blue_Ice", true)) {
+            if (sharedPref.getBoolean("Jaspet", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {
+            if (sharedPref.getBoolean("Hemorphite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glare_Crust", true)) {
+            if (sharedPref.getBoolean("Hedbergite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Dark_Glitter", true)) {
+            if (sharedPref.getBoolean("Gneiss", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Gelidus", true)) {
+            if (sharedPref.getBoolean("Dark_Ochre", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Krystallos", true)) {
+            if (sharedPref.getBoolean("Spodumain", true)) {
                 i++;
             }
-
-
+            if (sharedPref.getBoolean("Crokite", true)) {
+                i++;
+            }
+            if (sharedPref.getBoolean("Arkonor", true)) {
+                i++;
+            }
+            if (sharedPref.getBoolean("Bistot", true)) {
+                i++;
+            }
+            if (sharedPref.getBoolean("Mercoxit", false)) {
+                i++;
+            }
+            if (sharedPref.getBoolean("Variants", false)) {
+                i = i * 3;
+            }
             i++;
 
             return i;
@@ -478,7 +501,7 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
                 PPH = (TextView) itemView.findViewById(R.id.PPH);
             }
 
-            String Name[]=getResources().getStringArray(R.array.NamesI);
+            String Name[]=getResources().getStringArray(R.array.Names);
 
             void bind(int listIndex) {
                 switch (listIndex) {
@@ -493,9 +516,10 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
                         break;
                     default:
                         listItemNumberView.setText(Name[Sort[listIndex]]);
-                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)));
-                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat("1000")));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("MinIce", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/1000000/Float.parseFloat(sharedPref.getString("TimeIce", "300")))+"M");
+                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+String.valueOf(Sort[listIndex]), (float) 0.00)));
+                        String Vol[]=getResources().getStringArray(R.array.Vol);
+                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(Vol[Sort[listIndex]])));
+                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("MPC", "1500.00"))*Float.parseFloat(sharedPref.getString("Min", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(Vol[Sort[listIndex]])/1000000/Float.parseFloat(sharedPref.getString("Time", "120")))+"M");
                 }
             }
         }
@@ -542,15 +566,15 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
         SharedPreferences.Editor editor = sharedPref.edit();
 
 
-        for (int i=1;i!=13;i++) {
-            if(key.equals("CustomSI"+String.valueOf(i))||key.equals("Perc")||key.equals("MPC")||key.equals("Time")||key.equals("Min")){
-                {
-                    if (sharedPref.getString(key, "0.00").equals("")) {
-                        editor.remove(key);
-                        editor.commit();
-                    }
+        for (int i=1;i!=49;i++) {
+        if(key.equals("CustomS"+String.valueOf(i))||key.equals("Perc")||key.equals("MPC")||key.equals("Time")||key.equals("Min")){
+            {
+                if (sharedPref.getString(key, "0.00").equals("")) {
+                    editor.remove(key);
+                    editor.commit();
                 }
             }
+        }
         }
 
         if (key.equals("SystemNames")) {
@@ -560,34 +584,93 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
 
 
 
-    int Sort[]= new int[13];
+    int Sort[]= new int[49];
 
     public void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
         int i=1;
-        for(int c=1; !(c==13) ;c++) {
+        for(int c=1; !(c==49) ;c++) {
             switch (c) {
-                case 1: if(sharedPref.getBoolean("Clear_Icicle", true)) {Sort[i]=c; i++;} break;
-                case 2: if(sharedPref.getBoolean("White_Glaze", true)) {Sort[i]=c; i++;} break;
-                case 3: if(sharedPref.getBoolean("Blue_Ice", true)) {Sort[i]=c; i++;} break;
-                case 4: if(sharedPref.getBoolean("Glacial_Mass", true)) {Sort[i]=c; i++;} break;
-                case 5: if(sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {Sort[i]=c; i++;} break;
-                case 6: if(sharedPref.getBoolean("Pristine_White_Glaze", true)) {Sort[i]=c; i++;} break;
-                case 7: if(sharedPref.getBoolean("Thick_Blue_Ice", true)) {Sort[i]=c; i++;} break;
-                case 8: if(sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {Sort[i]=c; i++;} break;
-                case 9: if(sharedPref.getBoolean("Glare_Crust", true)) {Sort[i]=c; i++;} break;
-                case 10: if(sharedPref.getBoolean("Dark_Glitter", true)) {Sort[i]=c; i++;} break;
-                case 11: if(sharedPref.getBoolean("Gelidus", true)) {Sort[i]=c; i++;} break;
-                case 12: if(sharedPref.getBoolean("Krystallos", true)) {Sort[i]=c; i++;} break;
+                case 1: if(sharedPref.getBoolean("Arkonor", true)) {Sort[i]=c; i++;} break;
+                case 2: if(sharedPref.getBoolean("Bistot", true)) {Sort[i]=c; i++;} break;
+                case 3: if(sharedPref.getBoolean("Crokite", true)) {Sort[i]=c; i++;} break;
+                case 4: if(sharedPref.getBoolean("Dark_Ochre", true)) {Sort[i]=c; i++;} break;
+                case 5: if(sharedPref.getBoolean("Gneiss", true)) {Sort[i]=c; i++;} break;
+                case 6: if(sharedPref.getBoolean("Hedbergite", true)) {Sort[i]=c; i++;} break;
+                case 7: if(sharedPref.getBoolean("Hemorphite", true)) {Sort[i]=c; i++;} break;
+                case 8: if(sharedPref.getBoolean("Jaspet", true)) {Sort[i]=c; i++;} break;
+                case 9: if(sharedPref.getBoolean("Kernite", true)) {Sort[i]=c; i++;} break;
+                case 10: if(sharedPref.getBoolean("Mercoxit", false)) {Sort[i]=c; i++;} break;
+                case 11: if(sharedPref.getBoolean("Omber", true)) {Sort[i]=c; i++;} break;
+                case 12: if(sharedPref.getBoolean("Plagioclase", true)) {Sort[i]=c; i++;} break;
+                case 13: if(sharedPref.getBoolean("Pyroxeres", true)) {Sort[i]=c; i++;} break;
+                case 14: if(sharedPref.getBoolean("Scordite", true)) {Sort[i]=c; i++;} break;
+                case 15: if(sharedPref.getBoolean("Spodumain", true)) {Sort[i]=c; i++;} break;
+                case 16: if(sharedPref.getBoolean("Veldspar", true)) {Sort[i]=c; i++;} break;
+                case 1+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Arkonor", true)) {Sort[i]=c; i++;}} break;
+                case 2+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Bistot", true)) {Sort[i]=c; i++;}} break;
+                case 3+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Crokite", true)) {Sort[i]=c; i++;}} break;
+                case 4+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Dark_Ochre", true)) {Sort[i]=c; i++;}} break;
+                case 5+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Gneiss", true)) {Sort[i]=c; i++;}} break;
+                case 6+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Hedbergite", true)) {Sort[i]=c; i++;}} break;
+                case 7+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Hemorphite", true)) {Sort[i]=c; i++;}} break;
+                case 8+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Jaspet", true)) {Sort[i]=c; i++;}} break;
+                case 9+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Kernite", true)) {Sort[i]=c; i++;}} break;
+                case 10+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Mercoxit", false)) {Sort[i]=c; i++;}} break;
+                case 11+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Omber", true)) {Sort[i]=c; i++;}} break;
+                case 12+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Plagioclase", true)) {Sort[i]=c; i++;}} break;
+                case 13+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Pyroxeres", true)) {Sort[i]=c; i++;}} break;
+                case 14+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Scordite", true)) {Sort[i]=c; i++;}} break;
+                case 15+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Spodumain", true)) {Sort[i]=c; i++;}} break;
+                case 16+16: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Veldspar", true)) {Sort[i]=c; i++;}} break;
+                case 1+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Arkonor", true)) {Sort[i]=c; i++;}} break;
+                case 2+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Bistot", true)) {Sort[i]=c; i++;}} break;
+                case 3+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Crokite", true)) {Sort[i]=c; i++;}} break;
+                case 4+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Dark_Ochre", true)) {Sort[i]=c; i++;}} break;
+                case 5+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Gneiss", true)) {Sort[i]=c; i++;}} break;
+                case 6+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Hedbergite", true)) {Sort[i]=c; i++;}} break;
+                case 7+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Hemorphite", true)) {Sort[i]=c; i++;}} break;
+                case 8+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Jaspet", true)) {Sort[i]=c; i++;}} break;
+                case 9+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Kernite", true)) {Sort[i]=c; i++;}} break;
+                case 10+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Mercoxit", false)) {Sort[i]=c; i++;}} break;
+                case 11+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Omber", true)) {Sort[i]=c; i++;}} break;
+                case 12+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Plagioclase", true)) {Sort[i]=c; i++;}} break;
+                case 13+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Pyroxeres", true)) {Sort[i]=c; i++;}} break;
+                case 14+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Scordite", true)) {Sort[i]=c; i++;}} break;
+                case 15+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Spodumain", true)) {Sort[i]=c; i++;}} break;
+                case 16+32: if(sharedPref.getBoolean("Variants", false)) { if(sharedPref.getBoolean("Veldspar", true)) {Sort[i]=c; i++;}} break;
             }
         }
 
-
+        switch (sharedPref.getString("Sort","PPV")) {
+            case "PPV":
+                String Vol[]=getResources().getStringArray(R.array.Vol);
+                boolean tT=true;
+                while (tT) {
+                    tT = false;
+                    for (int k = 1; k < i - 1; k++) {
+                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + String.valueOf(Sort[k]), (float) 0.00)/Float.parseFloat(Vol[Sort[k]]) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + String.valueOf(Sort[k + 1]), (float) 0.00)/Float.parseFloat(Vol[Sort[k+1]])) {
+                            int r = Sort[k];
+                            Sort[k] = Sort[k + 1];
+                            Sort[k + 1] = r;
+                            tT = true;
+                        }
+                    }
+                }
+                int[] SortRR=new int[i];
+                for (int KKK=1; KKK<i;KKK++) {
+                    SortRR[KKK] = Sort[i-KKK];
+                }
+                for (int KKK=1; KKK<i;KKK++) {
+                    Sort[KKK]=SortRR[KKK];
+                }
+                break;
+            case "PPU":
                 boolean t=true;
                 while (t) {
                     t = false;
                     for (int k = 1; k < i - 1; k++) {
-                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") +"I"+ String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") +"I"+ String.valueOf(Sort[k + 1]), (float) 0.00)) {
+                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + String.valueOf(Sort[k + 1]), (float) 0.00)) {
                             int r = Sort[k];
                             Sort[k] = Sort[k + 1];
                             Sort[k + 1] = r;
@@ -602,8 +685,9 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
                 for (int KKK=1; KKK<i;KKK++) {
                     Sort[KKK]=SortR[KKK];
                 }
-
-
+                break;
+            default: break;
+        }
 
 
         mAdapter.notifyDataSetChanged();
@@ -612,9 +696,9 @@ public class ice extends AppCompatActivity implements SharedPreferences.OnShared
     public void writeStringstofloats() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        for (int count=1;count!=13; count++) {
+        for (int count=1;count!=49; count++) {
 
-            editor.putFloat("CustomI"+count, Float.parseFloat(sharedPref.getString("CustomSI"+count,"0.00")));
+            editor.putFloat("Custom"+count, Float.parseFloat(sharedPref.getString("CustomS"+count,"0.00")));
         }
         editor.commit();
     }
