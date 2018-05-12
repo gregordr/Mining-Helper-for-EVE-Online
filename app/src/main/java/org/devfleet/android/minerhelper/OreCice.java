@@ -1,4 +1,4 @@
-package com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.EVE_Mining_Calc;
+package org.devfleet.android.minerhelper;
 
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+
 
 import static android.support.v4.view.ViewCompat.jumpDrawablesToCurrentState;
 
