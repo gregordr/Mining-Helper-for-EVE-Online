@@ -16,9 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.devfleet.android.minerhelper.OreCgas;
 import org.devfleet.android.minerhelper.R;
-import org.devfleet.android.minerhelper.SystemCgas;
+import org.devfleet.android.minerhelper.selectionSettings.GasSelection;
+import org.devfleet.android.minerhelper.systemSettings.SystemCgas;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -63,7 +63,7 @@ public class GasPrices extends BasePrices {
     }
 
     void launchSelectionSettings() {
-        Intent launchOreC = new Intent(this, OreCgas.class);
+        Intent launchOreC = new Intent(this, GasSelection.class);
         startActivity(launchOreC);
     }
 

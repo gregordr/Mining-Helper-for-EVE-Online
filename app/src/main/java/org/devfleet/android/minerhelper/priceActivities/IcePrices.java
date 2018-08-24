@@ -14,9 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.devfleet.android.minerhelper.OreCice;
 import org.devfleet.android.minerhelper.R;
-import org.devfleet.android.minerhelper.SystemCice;
+import org.devfleet.android.minerhelper.selectionSettings.IceSelection;
+import org.devfleet.android.minerhelper.systemSettings.SystemCice;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -61,7 +61,7 @@ public class IcePrices extends BasePrices {
     }
 
     void launchSelectionSettings() {
-        Intent launchOreC = new Intent(this, OreCice.class);
+        Intent launchOreC = new Intent(this, IceSelection.class);
         startActivity(launchOreC);
     }
 

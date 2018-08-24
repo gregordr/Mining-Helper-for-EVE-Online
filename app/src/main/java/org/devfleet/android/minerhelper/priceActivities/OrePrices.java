@@ -16,9 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.devfleet.android.minerhelper.OreC;
 import org.devfleet.android.minerhelper.R;
-import org.devfleet.android.minerhelper.SystemC;
+import org.devfleet.android.minerhelper.selectionSettings.OreSelection;
+import org.devfleet.android.minerhelper.systemSettings.SystemC;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -43,19 +43,6 @@ public class OrePrices extends BasePrices {
 
         base = "https://market.fuzzwork.co.uk/aggregates/?types=22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431";
 
-        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("IcePrices",false)) {
-            Intent iceintent = new Intent (this, IcePrices.class);
-            finish();
-            startActivity(iceintent);
-            this.overridePendingTransition(0, 0);
-        }
-        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Gas",false)) {
-            Intent gasintent = new Intent (this, GasPrices.class);
-            finish();
-            startActivity(gasintent);
-            this.overridePendingTransition(0, 0);
-        }
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -77,7 +64,7 @@ public class OrePrices extends BasePrices {
     }
 
     void launchSelectionSettings() {
-        Intent launchOreC = new Intent(this, OreC.class);
+        Intent launchOreC = new Intent(this, OreSelection.class);
         startActivity(launchOreC);
     }
 

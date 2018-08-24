@@ -1,7 +1,9 @@
-package org.devfleet.android.minerhelper;
+package org.devfleet.android.minerhelper.systemSettings;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
+import org.devfleet.android.minerhelper.R;
 
 
 public class SystemCFragment extends PreferenceFragment {

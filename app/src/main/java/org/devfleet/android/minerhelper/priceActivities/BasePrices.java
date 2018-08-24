@@ -136,8 +136,7 @@ public abstract class BasePrices extends AppCompatActivity implements SharedPref
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("IcePrices", false);
-        editor.putBoolean("Gas", false);
+        editor.putString("launchName", "Ore");
         editor.commit();
 
         Intent changeIntent = new Intent(this, OrePrices.class);
@@ -150,8 +149,7 @@ public abstract class BasePrices extends AppCompatActivity implements SharedPref
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("IcePrices", false);
-        editor.putBoolean("Gas", true);
+        editor.putString("launchName", "Gas");
         editor.commit();
 
         Intent changeIntent = new Intent(this, GasPrices.class);
@@ -164,8 +162,7 @@ public abstract class BasePrices extends AppCompatActivity implements SharedPref
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Gas", false);
-        editor.putBoolean("IcePrices", true);
+        editor.putString("launchName", "Ice");
         editor.commit();
 
         Intent changeIntent = new Intent(this, IcePrices.class);
