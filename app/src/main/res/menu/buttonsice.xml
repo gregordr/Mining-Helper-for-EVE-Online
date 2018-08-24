@@ -8,19 +8,19 @@
         android:title="@string/action_refresh"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_settingsIce"
+        android:id="@+id/action_settings"
         android:title="@string/action_systemC"
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/action_iceChoice"
+        android:id="@+id/action_select"
         android:title="Chose Ice"
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
-   <item
-        android:id="@+id/action_backtoOre"
+    <item
+        android:id="@+id/action_ore"
         android:title="Go to ore"
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
@@ -39,6 +39,4 @@
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
-
-
 </menu>

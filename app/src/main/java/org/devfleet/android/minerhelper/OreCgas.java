@@ -12,41 +12,41 @@ import android.widget.CheckBox;
 
 public class OreCgas extends AppCompatActivity {
 
-    SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
 
-    CheckBox C28;
-    CheckBox C32;
-    CheckBox C50;
-    CheckBox C60;
-    CheckBox C70;
-    CheckBox C72;
-    CheckBox C84;
-    CheckBox C320;
-    CheckBox C540;
-    CheckBox Amber_Cytoserocin;
-    CheckBox Amber_Mykoserocin;
-    CheckBox Azure_Cytoserocin;
-    CheckBox Azure_Mykoserocin;
-    CheckBox Celadon_Cytoserocin;
-    CheckBox Celadon_Mykoserocin;
-    CheckBox Golden_Cytoserocin;
-    CheckBox Golden_Mykoserocin;
-    CheckBox Lime_Cytoserocin;
-    CheckBox Lime_Mykoserocin;
-    CheckBox Malachite_Cytoserocin;
-    CheckBox Malachite_Mykoserocin;
-    CheckBox Vermillion_Cytoserocin;
-    CheckBox Vermillion_Mykoserocin;
-    CheckBox Viridian_Cytoserocin;
-    CheckBox Viridian_Mykoserocin;
+    private CheckBox C28;
+    private CheckBox C32;
+    private CheckBox C50;
+    private CheckBox C60;
+    private CheckBox C70;
+    private CheckBox C72;
+    private CheckBox C84;
+    private CheckBox C320;
+    private CheckBox C540;
+    private CheckBox Amber_Cytoserocin;
+    private CheckBox Amber_Mykoserocin;
+    private CheckBox Azure_Cytoserocin;
+    private CheckBox Azure_Mykoserocin;
+    private CheckBox Celadon_Cytoserocin;
+    private CheckBox Celadon_Mykoserocin;
+    private CheckBox Golden_Cytoserocin;
+    private CheckBox Golden_Mykoserocin;
+    private CheckBox Lime_Cytoserocin;
+    private CheckBox Lime_Mykoserocin;
+    private CheckBox Malachite_Cytoserocin;
+    private CheckBox Malachite_Mykoserocin;
+    private CheckBox Vermillion_Cytoserocin;
+    private CheckBox Vermillion_Mykoserocin;
+    private CheckBox Viridian_Cytoserocin;
+    private CheckBox Viridian_Mykoserocin;
 
-    View v;
+    private View v;
 
-    CheckBox Wormhole;
-    CheckBox Cytoserocin;
-    CheckBox Mykoserocin;
+    private CheckBox Wormhole;
+    private CheckBox Cytoserocin;
+    private CheckBox Mykoserocin;
 
-    AlertDialog dialog;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,36 +57,37 @@ public class OreCgas extends AppCompatActivity {
         loadViews();
     }
 
-    public void getViews() {
-        C28 = (CheckBox) findViewById(R.id.C28);
-        C32 = (CheckBox) findViewById(R.id.C32);
-        C50 = (CheckBox) findViewById(R.id.C50);
-        C60 = (CheckBox) findViewById(R.id.C60);
-        C70 = (CheckBox) findViewById(R.id.C70);
-        C72 = (CheckBox) findViewById(R.id.C72);
-        C84 = (CheckBox) findViewById(R.id.C84);
-        C320 = (CheckBox) findViewById(R.id.C320);
-        C540 = (CheckBox) findViewById(R.id.C540);
-        
-        Amber_Cytoserocin = (CheckBox) findViewById(R.id.Amber_Cytoserocin);
-        Azure_Cytoserocin = (CheckBox) findViewById(R.id.Azure_Cytoserocin);
-        Celadon_Cytoserocin = (CheckBox) findViewById(R.id.Celadon_Cytoserocin);
-        Golden_Cytoserocin = (CheckBox) findViewById(R.id.Golden_Cytoserocin);
-        Lime_Cytoserocin = (CheckBox) findViewById(R.id.Lime_Cytoserocin);
-        Malachite_Cytoserocin = (CheckBox) findViewById(R.id.Malachite_Cytoserocin);
-        Vermillion_Cytoserocin = (CheckBox) findViewById(R.id.Vermillion_Cytoserocin);
-        Viridian_Cytoserocin = (CheckBox) findViewById(R.id.Viridian_Cytoserocin);
-        
-        Amber_Mykoserocin = (CheckBox) findViewById(R.id.Amber_Mykoserocin);
-        Azure_Mykoserocin = (CheckBox) findViewById(R.id.Azure_Mykoserocin);
-        Celadon_Mykoserocin = (CheckBox) findViewById(R.id.Celadon_Mykoserocin);
-        Golden_Mykoserocin = (CheckBox) findViewById(R.id.Golden_Mykoserocin);
-        Lime_Mykoserocin = (CheckBox) findViewById(R.id.Lime_Mykoserocin);
-        Malachite_Mykoserocin = (CheckBox) findViewById(R.id.Malachite_Mykoserocin);
-        Vermillion_Mykoserocin = (CheckBox) findViewById(R.id.Vermillion_Mykoserocin);
-        Viridian_Mykoserocin = (CheckBox) findViewById(R.id.Viridian_Mykoserocin);
+    private void getViews() {
+        C28 = findViewById(R.id.C28);
+        C32 = findViewById(R.id.C32);
+        C50 = findViewById(R.id.C50);
+        C60 = findViewById(R.id.C60);
+        C70 = findViewById(R.id.C70);
+        C72 = findViewById(R.id.C72);
+        C84 = findViewById(R.id.C84);
+        C320 = findViewById(R.id.C320);
+        C540 = findViewById(R.id.C540);
+
+        Amber_Cytoserocin = findViewById(R.id.Amber_Cytoserocin);
+        Azure_Cytoserocin = findViewById(R.id.Azure_Cytoserocin);
+        Celadon_Cytoserocin = findViewById(R.id.Celadon_Cytoserocin);
+        Golden_Cytoserocin = findViewById(R.id.Golden_Cytoserocin);
+        Lime_Cytoserocin = findViewById(R.id.Lime_Cytoserocin);
+        Malachite_Cytoserocin = findViewById(R.id.Malachite_Cytoserocin);
+        Vermillion_Cytoserocin = findViewById(R.id.Vermillion_Cytoserocin);
+        Viridian_Cytoserocin = findViewById(R.id.Viridian_Cytoserocin);
+
+        Amber_Mykoserocin = findViewById(R.id.Amber_Mykoserocin);
+        Azure_Mykoserocin = findViewById(R.id.Azure_Mykoserocin);
+        Celadon_Mykoserocin = findViewById(R.id.Celadon_Mykoserocin);
+        Golden_Mykoserocin = findViewById(R.id.Golden_Mykoserocin);
+        Lime_Mykoserocin = findViewById(R.id.Lime_Mykoserocin);
+        Malachite_Mykoserocin = findViewById(R.id.Malachite_Mykoserocin);
+        Vermillion_Mykoserocin = findViewById(R.id.Vermillion_Mykoserocin);
+        Viridian_Mykoserocin = findViewById(R.id.Viridian_Mykoserocin);
     }
-    public void loadViews() {
+
+    private void loadViews() {
         C28.setChecked(sharedPref.getBoolean("C28", true));
         C32.setChecked(sharedPref.getBoolean("C32", true));
         C50.setChecked(sharedPref.getBoolean("C50", true));
@@ -127,13 +128,13 @@ public class OreCgas extends AppCompatActivity {
         checkCheckBox();
     }
 
-    public void findButtons() {
-        Mykoserocin = (CheckBox) v.findViewById(R.id.Mykoserocin);
-        Cytoserocin = (CheckBox) v.findViewById(R.id.Cytoserocin);
-        Wormhole = (CheckBox) v.findViewById(R.id.Wormhole);
+    private void findButtons() {
+        Mykoserocin = v.findViewById(R.id.Mykoserocin);
+        Cytoserocin = v.findViewById(R.id.Cytoserocin);
+        Wormhole = v.findViewById(R.id.Wormhole);
     }
 
-    public void checkCheckBox() {
+    private void checkCheckBox() {
         Wormhole.setChecked(sharedPref.getBoolean("CBGW",true));
         Mykoserocin.setChecked(sharedPref.getBoolean("CBGM",true));
         Cytoserocin.setChecked(sharedPref.getBoolean("CBGC",true));
@@ -141,7 +142,7 @@ public class OreCgas extends AppCompatActivity {
 
     public void checkButton(View view) {
 
-        SharedPreferences.Editor editor = sharedPref.edit(); //wrong cause muptiple possible
+        SharedPreferences.Editor editor = sharedPref.edit(); //wrong cause mulptiple possible
         if ((Wormhole==view)) {editor.putBoolean("CBGW",Wormhole.isChecked());}
         if ((Mykoserocin==view)) {editor.putBoolean("CBGM",Mykoserocin.isChecked());}
         if ((Cytoserocin==view)) {editor.putBoolean("CBGC",Cytoserocin.isChecked());}

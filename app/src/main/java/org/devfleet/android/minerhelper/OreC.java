@@ -12,47 +12,46 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-
 import static android.support.v4.view.ViewCompat.jumpDrawablesToCurrentState;
 
 public class OreC extends AppCompatActivity {
 
-        SharedPreferences sharedPref;
+    private SharedPreferences sharedPref;
 
-        CheckBox Variants;
-        CheckBox Mercoxit;
-        CheckBox Arkonor;
-        CheckBox Bistot;
-        CheckBox Crokite;
-        CheckBox Dark_Ochre;
-        CheckBox Gneiss;
-        CheckBox Hedbergite;
-        CheckBox Hemorphite;
-        CheckBox Jaspet;
-        CheckBox Kernite;
-        CheckBox Omber;
-        CheckBox Plagioclase;
-        CheckBox Pyroxeres;
-        CheckBox Scordite;
-        CheckBox Spodumain;
-        CheckBox Veldspar;
+    private CheckBox Variants;
+    private CheckBox Mercoxit;
+    private CheckBox Arkonor;
+    private CheckBox Bistot;
+    private CheckBox Crokite;
+    private CheckBox Dark_Ochre;
+    private CheckBox Gneiss;
+    private CheckBox Hedbergite;
+    private CheckBox Hemorphite;
+    private CheckBox Jaspet;
+    private CheckBox Kernite;
+    private CheckBox Omber;
+    private CheckBox Plagioclase;
+    private CheckBox Pyroxeres;
+    private CheckBox Scordite;
+    private CheckBox Spodumain;
+    private CheckBox Veldspar;
 
-        View v;
+    private View v;
 
-    Button Amarr;
-    Button Caldari;
-    Button Minmatar;
-    Button All;
-    Button Gallente;
+    private Button Amarr;
+    private Button Caldari;
+    private Button Minmatar;
+    private Button All;
+    private Button Gallente;
 
-    CheckBox s10;
-    CheckBox s09;
-    CheckBox s07;
-    CheckBox s04;
-    CheckBox s02;
-    CheckBox s00;
+    private CheckBox s10;
+    private CheckBox s09;
+    private CheckBox s07;
+    private CheckBox s04;
+    private CheckBox s02;
+    private CheckBox s00;
 
-    AlertDialog dialog;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,26 +62,27 @@ public class OreC extends AppCompatActivity {
         loadViews();
     }
 
-    public void getViews() {
-        Variants = (CheckBox) findViewById(R.id.Variants);
-        Mercoxit = (CheckBox) findViewById(R.id.Mercoxit);
-        Arkonor = (CheckBox) findViewById(R.id.Arkonor);
-        Bistot = (CheckBox) findViewById(R.id.Bistot);
-        Crokite = (CheckBox) findViewById(R.id.Crokite);
-        Dark_Ochre = (CheckBox) findViewById(R.id.Dark_Ochre);
-        Gneiss = (CheckBox) findViewById(R.id.Gneiss);
-        Hedbergite = (CheckBox) findViewById(R.id.Hedbergite);
-        Hemorphite = (CheckBox) findViewById(R.id.Hemorphite);
-        Jaspet = (CheckBox) findViewById(R.id.Jaspet);
-        Kernite = (CheckBox) findViewById(R.id.Kernite);
-        Omber = (CheckBox) findViewById(R.id.Omber);
-        Plagioclase = (CheckBox) findViewById(R.id.Plagioclase);
-        Pyroxeres = (CheckBox) findViewById(R.id.Pyroxeres);
-        Scordite = (CheckBox) findViewById(R.id.Scordite);
-        Spodumain = (CheckBox) findViewById(R.id.Spodumain);
-        Veldspar = (CheckBox) findViewById(R.id.Veldspar);
+    private void getViews() {
+        Variants = findViewById(R.id.Variants);
+        Mercoxit = findViewById(R.id.Mercoxit);
+        Arkonor = findViewById(R.id.Arkonor);
+        Bistot = findViewById(R.id.Bistot);
+        Crokite = findViewById(R.id.Crokite);
+        Dark_Ochre = findViewById(R.id.Dark_Ochre);
+        Gneiss = findViewById(R.id.Gneiss);
+        Hedbergite = findViewById(R.id.Hedbergite);
+        Hemorphite = findViewById(R.id.Hemorphite);
+        Jaspet = findViewById(R.id.Jaspet);
+        Kernite = findViewById(R.id.Kernite);
+        Omber = findViewById(R.id.Omber);
+        Plagioclase = findViewById(R.id.Plagioclase);
+        Pyroxeres = findViewById(R.id.Pyroxeres);
+        Scordite = findViewById(R.id.Scordite);
+        Spodumain = findViewById(R.id.Spodumain);
+        Veldspar = findViewById(R.id.Veldspar);
     }
-    public void loadViews() {
+
+    private void loadViews() {
         Variants.setChecked(sharedPref.getBoolean("Variants", false));
         Mercoxit.setChecked(sharedPref.getBoolean("Mercoxit", false));
         Arkonor.setChecked(sharedPref.getBoolean("Arkonor", true));
@@ -101,19 +101,20 @@ public class OreC extends AppCompatActivity {
         Spodumain.setChecked(sharedPref.getBoolean("Spodumain", true));
         Veldspar.setChecked(sharedPref.getBoolean("Veldspar", true));
     }
-    public void findButtons() {
-        Amarr = (Button) v.findViewById(R.id.toggleButtonA);
-        Caldari = (Button) v.findViewById(R.id.toggleButtonC);
-        Gallente = (Button) v.findViewById(R.id.toggleButtonG);
-        Minmatar = (Button) v.findViewById(R.id.toggleButtonM);
-        All = (Button) v.findViewById(R.id.toggleButtonAll);
 
-        s10 = (CheckBox) v.findViewById(R.id.s1_0);
-        s09 = (CheckBox) v.findViewById(R.id.s0_9);
-        s07 = (CheckBox) v.findViewById(R.id.s0_7);
-        s04 = (CheckBox) v.findViewById(R.id.s0_3);
-        s02 = (CheckBox) v.findViewById(R.id.s0_1);
-        s00 = (CheckBox) v.findViewById(R.id.s0_0);
+    private void findButtons() {
+        Amarr = v.findViewById(R.id.toggleButtonA);
+        Caldari = v.findViewById(R.id.toggleButtonC);
+        Gallente = v.findViewById(R.id.toggleButtonG);
+        Minmatar = v.findViewById(R.id.toggleButtonM);
+        All = v.findViewById(R.id.toggleButtonAll);
+
+        s10 = v.findViewById(R.id.s1_0);
+        s09 = v.findViewById(R.id.s0_9);
+        s07 = v.findViewById(R.id.s0_7);
+        s04 = v.findViewById(R.id.s0_3);
+        s02 = v.findViewById(R.id.s0_1);
+        s00 = v.findViewById(R.id.s0_0);
     }
 
     public void openSelection(View view) {
@@ -141,7 +142,7 @@ public class OreC extends AppCompatActivity {
         editor.commit();
     }
 
-    public String whatButton(View view) {
+    private String whatButton(View view) {
         if(view==Amarr) {return "A";}
         if(view==Caldari) {return "C";}
         if(view==Gallente) {return "G";}
@@ -149,7 +150,7 @@ public class OreC extends AppCompatActivity {
         return "All";
     }
 
-    public void paintOne() {
+    private void paintOne() {
         String View=sharedPref.getString("Button", "All");
         switch (View){
             case "A": ViewCompat.setBackgroundTintList(Amarr, ColorStateList.valueOf(0xaaaaaaaa)); break;
@@ -160,7 +161,7 @@ public class OreC extends AppCompatActivity {
         }
     }
 
-    public void checkCheckBox() {
+    private void checkCheckBox() {
         String box=sharedPref.getString("CB", "s00");
         switch (box) {
             case "s10": s10.setChecked(true); break;

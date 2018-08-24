@@ -19,12 +19,12 @@
         app:showAsAction="never"
         />
     <item
-        android:id="@+id/action_ore"
+        android:id="@+id/action_select"
         android:title="@string/action_oreC"
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
-   <item
+    <item
         android:id="@+id/action_ice"
         android:title="@string/action_ice"
         android:icon="@mipmap/ic_settings"
@@ -44,6 +44,4 @@
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
-
-
 </menu>
