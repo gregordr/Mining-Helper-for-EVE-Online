@@ -1,4 +1,4 @@
-package org.devfleet.android.minerhelper;
+package org.devfleet.android.minerhelper.priceActivities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,6 +25,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import org.devfleet.android.minerhelper.About;
+import org.devfleet.android.minerhelper.OreC;
+import org.devfleet.android.minerhelper.R;
+import org.devfleet.android.minerhelper.SystemC;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -36,7 +40,7 @@ import java.net.URL;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class OrePrices extends BasePrices implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     GreenAdapter mAdapter;
     RecyclerView mNumbersList;
@@ -45,14 +49,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Ice",false)) {
-            Intent iceintent = new Intent (this, Ice.class);
+        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("IcePrices",false)) {
+            Intent iceintent = new Intent (this, IcePrices.class);
             finish();
             startActivity(iceintent);
             this.overridePendingTransition(0, 0);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("Gas",false)) {
-            Intent gasintent = new Intent (this, Gasactivity.class);
+            Intent gasintent = new Intent (this, GasPrices.class);
             finish();
             startActivity(gasintent);
             this.overridePendingTransition(0, 0);
@@ -133,17 +137,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public void launchice() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Ice",true);
+        editor.putBoolean("IcePrices",true);
         editor.commit();
 
         recreate();
     }
 
     public void launchgas() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
         editor.putBoolean("Gas",true);
@@ -180,11 +184,11 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public void sortBy() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(OrePrices.this);
         builder.setTitle(R.string.dialog_message);
         builder.setItems(R.array.sortOptions, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 switch (which) {
                     case 0:
@@ -382,7 +386,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         SharedPreferences sharedPref;
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
         }
 
         @Override
@@ -426,7 +430,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
             if (sharedPref.getBoolean("Veldspar", true)) {
                 i++;
             }
@@ -587,7 +591,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     int Sort[]= new int[49];
 
     public void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(OrePrices.this);
         int i=1;
         for(int c=1; !(c==49) ;c++) {
             switch (c) {

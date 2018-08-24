@@ -1,4 +1,4 @@
-package org.devfleet.android.minerhelper;
+package org.devfleet.android.minerhelper.priceActivities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +24,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
+import org.devfleet.android.minerhelper.About;
+import org.devfleet.android.minerhelper.OreCgas;
+import org.devfleet.android.minerhelper.R;
+import org.devfleet.android.minerhelper.SystemCgas;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,10 +40,12 @@ import java.net.URL;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class Ice extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    GreenAdapter mAdapter;
+public class GasPrices extends BasePrices implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    GasPrices.GreenAdapter mAdapter;
     RecyclerView mNumbersList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +55,8 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
-        mAdapter = new GreenAdapter();
-        mNumbersList.addItemDecoration(new DividerItemDecoration(this));
+        mAdapter = new GasPrices.GreenAdapter();
+        mNumbersList.addItemDecoration(new GasPrices.DividerItemDecoration(this));
         mNumbersList.setAdapter(mAdapter);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -82,7 +89,7 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.buttonsice, menu);
+        inflater.inflate(R.menu.buttonsgas, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -96,14 +103,17 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
             case R.id.action_refresh:
                 refresh();
                 return true;
+            case R.id.action_sort:
+                sortBy();
+                return true;
             case R.id.action_iceChoice:
                 launchOreC();
                 return true;
             case R.id.action_backtoOre:
-                launchice();
+                launchGas();
                 return true;
-            case R.id.action_gas:
-                launchgas();
+            case R.id.action_ice:
+                launchice();
                 return true;
             case R.id.action_about:
                 launchAbout();
@@ -114,40 +124,40 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         }
     }
 
-    public void launchice() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
+    public void launchGas() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Ice",false);
+        editor.putBoolean("Gas",false);
         editor.commit();
 
-        Intent iceintent = new Intent (this, MainActivity.class);
+        Intent iceintent = new Intent (this, OrePrices.class);
         finish();
         startActivity(iceintent);
         this.overridePendingTransition(0, 0);
     }
 
-    public void launchgas() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
+    public void launchice() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        editor.putBoolean("Ice",false);
-        editor.putBoolean("Gas",true);
+        editor.putBoolean("Gas",false);
+        editor.putBoolean("IcePrices",true);
         editor.commit();
 
-        Intent iceintent = new Intent (this, MainActivity.class);
+        Intent iceintent = new Intent (this, OrePrices.class);
         finish();
         startActivity(iceintent);
         this.overridePendingTransition(0, 0);
     }
 
     public void launchSystemC() {
-        Intent launchSystemC = new Intent(this, SystemCice.class);
+        Intent launchSystemC = new Intent(this, SystemCgas.class);
         startActivity(launchSystemC);
     }
 
     public void launchOreC() {
-        Intent launchOreC = new Intent(this, OreCice.class);
+        Intent launchOreC = new Intent(this, OreCgas.class);
         startActivity(launchOreC);
     }
 
@@ -164,26 +174,26 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        new fetch().execute(url);
+        new GasPrices.fetch().execute(url);
 
     }
 
     public void sortBy() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(Ice.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(GasPrices.this);
         builder.setTitle(R.string.dialog_message);
         builder.setItems(R.array.sortOptions, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 switch (which) {
                     case 0:
-                        editor.putString("Sort","PPV");
+                        editor.putString("SortG","PPV");
                         break;
                     case 1:
-                        editor.putString("Sort","PPU");
+                        editor.putString("SortG","PPU");
                         break;
                     case 2:
-                        editor.putString("Sort","PPN");
+                        editor.putString("SortG","PPN");
                         break;
                 }
                 editor.commit();
@@ -207,11 +217,9 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
             default: SystemNum="0"; break;
         }
 
-        String base = "https://market.fuzzwork.co.uk/aggregates/?types=16262,16265,16264,16263,17978,17976,17975,17977,16266,16267,16268,16269,28434,28444,28433,28438,28436,28441,28443,28442,28439,28435,28437,28440";
+        String base = "https://market.fuzzwork.co.uk/aggregates/?types=30375,30376,30370,30371,30372,30373,30374,30377,30378,25268,25279,25275,25273,25277,25276,25278,25274,28694,28695,28696,28697,28698,28699,28700,28701";
 
         Uri ApiUri = Uri.parse(base).buildUpon()
-
-                // .appendQueryParameter("types", "22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431")
 
                 .appendQueryParameter("station", SystemNum)
                 .build();
@@ -282,36 +290,36 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
 
         }
 
-        String[] nums = getResources().getStringArray(R.array .numsI);
+        String[] nums = getResources().getStringArray(R.array .numsG);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=26; i++) {
             try {
-                editor.putFloat("Uncompressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
             }
         }
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=26; i++) {
             try {
-                editor.putFloat("Uncompressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        for (int i = 1; i!=13; i++) {
-            try {
-                editor.putFloat("Compressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i!=26; i++) {
             try {
-                editor.putFloat("Compressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Compressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = 1; i!=26; i++) {
+            try {
+                editor.putFloat("Compressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -366,17 +374,17 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         mAdapter.notifyItemChanged(0);
     }
 
-    public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder> {
+    public class GreenAdapter extends RecyclerView.Adapter<GasPrices.GreenAdapter.NumberViewHolder> {
 
-        private final String TAG = GreenAdapter.class.getSimpleName();
+        private final String TAG = GasPrices.GreenAdapter.class.getSimpleName();
         SharedPreferences sharedPref;
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
         }
 
         @Override
-        public NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        public GasPrices.GreenAdapter.NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             Context context = viewGroup.getContext();
             int layoutIdForListItem;
             if (viewType == 1) {
@@ -388,7 +396,7 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
             boolean shouldAttachToParentImmediately = false;
 
             View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
-            NumberViewHolder viewHolder = new NumberViewHolder(view);
+            GasPrices.GreenAdapter.NumberViewHolder viewHolder = new GasPrices.GreenAdapter.NumberViewHolder(view);
             return viewHolder;
         }
 
@@ -406,7 +414,7 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         }
 
         @Override
-        public void onBindViewHolder(NumberViewHolder holder, int position) {
+        public void onBindViewHolder(GasPrices.GreenAdapter.NumberViewHolder holder, int position) {
 
             holder.bind(position);
         }
@@ -416,43 +424,109 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
-            if (sharedPref.getBoolean("Clear_Icicle", true)) {
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
+
+            if (sharedPref.getBoolean("C28", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("White_Glaze", true)) {
+
+            if (sharedPref.getBoolean("C32", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Blue_Ice", true)) {
+
+            if (sharedPref.getBoolean("C50", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glacial_Mass", true)) {
+
+            if (sharedPref.getBoolean("C60", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {
+
+            if (sharedPref.getBoolean("C70", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Pristine_White_Glaze", true)) {
+
+            if (sharedPref.getBoolean("C72", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Thick_Blue_Ice", true)) {
+
+            if (sharedPref.getBoolean("C84", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {
+
+            if (sharedPref.getBoolean("C320", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glare_Crust", true)) {
+
+            if (sharedPref.getBoolean("C540", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Dark_Glitter", true)) {
+
+            if (sharedPref.getBoolean("Amber_Cytoserocin", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Gelidus", true)) {
+
+            if (sharedPref.getBoolean("Azure_Cytoserocin", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Krystallos", true)) {
+
+            if (sharedPref.getBoolean("Celadon_Cytoserocin", true)) {
                 i++;
             }
+
+            if (sharedPref.getBoolean("Golden_Cytoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Lime_Cytoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Malachite_Cytoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Vermillion_Cytoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Viridian_Cytoserocin", true)) {
+                i++;
+            }
+
+            
+            if (sharedPref.getBoolean("Amber_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Azure_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Celadon_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Golden_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Lime_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Malachite_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Vermillion_Mykoserocin", true)) {
+                i++;
+            }
+
+            if (sharedPref.getBoolean("Viridian_Mykoserocin", true)) {
+                i++;
+            }
+
 
 
             i++;
@@ -478,7 +552,7 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
                 PPH = (TextView) itemView.findViewById(R.id.PPH);
             }
 
-            String Name[]=getResources().getStringArray(R.array.NamesI);
+            String Name[]=getResources().getStringArray(R.array.NamesG);
 
             void bind(int listIndex) {
                 switch (listIndex) {
@@ -489,13 +563,24 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
                         }
                         TextView listItemNumberView2 = (TextView) itemView.findViewById(R.id.TV2);
                         listItemNumberView2.setText(sharedPref.getString("SystemNames", "Jita") + " ");
-                        listItemNumberView2.append(sharedPref.getString("BS", "Compressed Sell") + " prices");
+
+                        String BSt = "Custom";
+                        switch (sharedPref.getString("BS", "Compressed Sell")){
+                        case "Custom": BSt="Custom"; break;
+                        case "Compressed Buy": BSt="Buy"; break;
+                        case "Compressed Sell": BSt="Sell"; break;
+                        case "Uncompressed Sell": BSt="Sell"; break;
+                        case "Uncompressed Buy": BSt="Buy"; break;
+                        }
+
+                        listItemNumberView2.append(BSt + " prices");
                         break;
                     default:
                         listItemNumberView.setText(Name[Sort[listIndex]]);
-                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)));
-                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat("1000")));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("MinIce", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/1000000/Float.parseFloat(sharedPref.getString("TimeIce", "300")))+"M");
+                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)));
+                        String VolG[]=getResources().getStringArray(R.array.VolG);
+                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])));
+                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("AmountGas", "10"))*Float.parseFloat(sharedPref.getString("MinG", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])/1000000/Float.parseFloat(sharedPref.getString("TimeGas", "30")))+"M");
                 }
             }
         }
@@ -542,8 +627,8 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
         SharedPreferences.Editor editor = sharedPref.edit();
 
 
-        for (int i=1;i!=13;i++) {
-            if(key.equals("CustomSI"+String.valueOf(i))||key.equals("Perc")||key.equals("MPC")||key.equals("Time")||key.equals("Min")){
+        for (int i=1;i!=26;i++) {
+            if(key.equals("CustomSG"+String.valueOf(i))||key.equals("Perc")||key.equals("MPC")||key.equals("Time")||key.equals("Min")){
                 {
                     if (sharedPref.getString(key, "0.00").equals("")) {
                         editor.remove(key);
@@ -560,34 +645,71 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
 
 
 
-    int Sort[]= new int[13];
+    int Sort[]= new int[26];
 
     public void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(Ice.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
         int i=1;
-        for(int c=1; !(c==13) ;c++) {
+        for(int c=1; !(c==26) ;c++) {
             switch (c) {
-                case 1: if(sharedPref.getBoolean("Clear_Icicle", true)) {Sort[i]=c; i++;} break;
-                case 2: if(sharedPref.getBoolean("White_Glaze", true)) {Sort[i]=c; i++;} break;
-                case 3: if(sharedPref.getBoolean("Blue_Ice", true)) {Sort[i]=c; i++;} break;
-                case 4: if(sharedPref.getBoolean("Glacial_Mass", true)) {Sort[i]=c; i++;} break;
-                case 5: if(sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {Sort[i]=c; i++;} break;
-                case 6: if(sharedPref.getBoolean("Pristine_White_Glaze", true)) {Sort[i]=c; i++;} break;
-                case 7: if(sharedPref.getBoolean("Thick_Blue_Ice", true)) {Sort[i]=c; i++;} break;
-                case 8: if(sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {Sort[i]=c; i++;} break;
-                case 9: if(sharedPref.getBoolean("Glare_Crust", true)) {Sort[i]=c; i++;} break;
-                case 10: if(sharedPref.getBoolean("Dark_Glitter", true)) {Sort[i]=c; i++;} break;
-                case 11: if(sharedPref.getBoolean("Gelidus", true)) {Sort[i]=c; i++;} break;
-                case 12: if(sharedPref.getBoolean("Krystallos", true)) {Sort[i]=c; i++;} break;
+                case 1: if(sharedPref.getBoolean("C28", true)) {Sort[i]=c; i++;} break;
+                case 2: if(sharedPref.getBoolean("C32", true)) {Sort[i]=c; i++;} break;
+                case 3: if(sharedPref.getBoolean("C50", true)) {Sort[i]=c; i++;} break;
+                case 4: if(sharedPref.getBoolean("C60", true)) {Sort[i]=c; i++;} break;
+                case 5: if(sharedPref.getBoolean("C70", true)) {Sort[i]=c; i++;} break;
+                case 6: if(sharedPref.getBoolean("C72", true)) {Sort[i]=c; i++;} break;
+                case 7: if(sharedPref.getBoolean("C84", true)) {Sort[i]=c; i++;} break;
+                case 8: if(sharedPref.getBoolean("C320", true)) {Sort[i]=c; i++;} break;
+                case 9: if(sharedPref.getBoolean("C540", true)) {Sort[i]=c; i++;} break;
+                case 10: if(sharedPref.getBoolean("Amber_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 11: if(sharedPref.getBoolean("Azure_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 12: if(sharedPref.getBoolean("Celadon_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 13: if(sharedPref.getBoolean("Golden_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 14: if(sharedPref.getBoolean("Lime_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 15: if(sharedPref.getBoolean("Malachite_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 16: if(sharedPref.getBoolean("Vermillion_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 17: if(sharedPref.getBoolean("Viridian_Cytoserocin", true)) {Sort[i]=c; i++;} break;
+                case 18: if(sharedPref.getBoolean("Amber_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 19: if(sharedPref.getBoolean("Azure_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 20: if(sharedPref.getBoolean("Celadon_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 21: if(sharedPref.getBoolean("Golden_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 22: if(sharedPref.getBoolean("Lime_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 23: if(sharedPref.getBoolean("Malachite_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 24: if(sharedPref.getBoolean("Vermillion_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+                case 25: if(sharedPref.getBoolean("Viridian_Mykoserocin", true)) {Sort[i]=c; i++;} break;
+
             }
         }
 
-
-                boolean t=true;
+        switch (sharedPref.getString("SortG","PPV")) {
+            case "PPV":
+                String VolG[]=getResources().getStringArray(R.array.VolG);
+                boolean tT = true;
+                while (tT) {
+                    tT = false;
+                    for (int k = 1; k < i - 1; k++) {
+                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[k]), (float) 0.00)/Float.parseFloat(VolG[Sort[k]])> sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[k + 1]), (float) 0.00)/Float.parseFloat(VolG[Sort[k+1]])) {
+                            int r = Sort[k];
+                            Sort[k] = Sort[k + 1];
+                            Sort[k + 1] = r;
+                            tT = true;
+                        }
+                    }
+                }
+                int[] SortRR = new int[i];
+                for (int KKK = 1; KKK < i; KKK++) {
+                    SortRR[KKK] = Sort[i - KKK];
+                }
+                for (int KKK = 1; KKK < i; KKK++) {
+                    Sort[KKK] = SortRR[KKK];
+                }
+                break;
+            case "PPU":
+                boolean t = true;
                 while (t) {
                     t = false;
                     for (int k = 1; k < i - 1; k++) {
-                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") +"I"+ String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") +"I"+ String.valueOf(Sort[k + 1]), (float) 0.00)) {
+                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[k + 1]), (float) 0.00)) {
                             int r = Sort[k];
                             Sort[k] = Sort[k + 1];
                             Sort[k + 1] = r;
@@ -595,15 +717,16 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
                         }
                     }
                 }
-                int[] SortR=new int[i];
-                for (int KKK=1; KKK<i;KKK++) {
-                    SortR[KKK] = Sort[i-KKK];
+                int[] SortR = new int[i];
+                for (int KKK = 1; KKK < i; KKK++) {
+                    SortR[KKK] = Sort[i - KKK];
                 }
-                for (int KKK=1; KKK<i;KKK++) {
-                    Sort[KKK]=SortR[KKK];
+                for (int KKK = 1; KKK < i; KKK++) {
+                    Sort[KKK] = SortR[KKK];
                 }
-
-
+                break;
+            default: break;
+        }
 
 
         mAdapter.notifyDataSetChanged();
@@ -612,9 +735,8 @@ public class Ice extends AppCompatActivity implements SharedPreferences.OnShared
     public void writeStringstofloats() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        for (int count=1;count!=13; count++) {
-
-            editor.putFloat("CustomI"+count, Float.parseFloat(sharedPref.getString("CustomSI"+count,"0.00")));
+        for (int count=1;count!=26; count++) {
+            editor.putFloat("CustomG"+count, Float.parseFloat(sharedPref.getString("CustomSG"+count,"0.00")));
         }
         editor.commit();
     }
