@@ -11,74 +11,76 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="org.devfleet.android.minerhelper.MainActivity"
+            android:name="org.devfleet.android.minerhelper.priceActivities.OrePrices"
             android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.Ice"
+            android:name="org.devfleet.android.minerhelper.priceActivities.IcePrices"
             android:label="Ice"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.Gasactivity"
+            android:name="org.devfleet.android.minerhelper.priceActivities.GasPrices"
             android:label="Gas"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.SystemC"
+            android:name="org.devfleet.android.minerhelper.systemSettings.SystemC"
             android:label="@string/SystemCtext"
             android:launchMode="singleTop"
-            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.OrePrices">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.devfleet.android.minerhelper.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.priceActivities.OrePrices" />
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.SystemCice"
+            android:name="org.devfleet.android.minerhelper.systemSettings.SystemCice"
             android:label="@string/SystemCtext"
-            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.IcePrices">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.SystemCgas"
-            android:parentActivityName="org.devfleet.android.minerhelper.Gasactivity">
+            android:name="org.devfleet.android.minerhelper.systemSettings.SystemCgas"
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.GasPrices">
             android:label="@string/SystemCtext"
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.OreC"
+            android:name="org.devfleet.android.minerhelper.selectionSettings.OreSelection"
             android:label="@string/OreCtext"
             android:launchMode="singleTop"
-            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.OrePrices">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.devfleet.android.minerhelper.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.priceActivities.OrePrices" />
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.OreCice"
+            android:name="org.devfleet.android.minerhelper.selectionSettings.IceSelection"
             android:label="Select ice"
-            android:parentActivityName="org.devfleet.android.minerhelper.Ice">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.IcePrices">
             android:launchMode="singleTop">
         </activity>
         <activity
-            android:name="org.devfleet.android.minerhelper.OreCgas"
+            android:name="org.devfleet.android.minerhelper.selectionSettings.GasSelection"
             android:label="Select gas"
-            android:parentActivityName="org.devfleet.android.minerhelper.Gasactivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.GasPrices">
             android:launchMode="singleTop">
         </activity>
         <activity
             android:name="org.devfleet.android.minerhelper.About"
             android:label="@string/AboutText"
             android:launchMode="singleTop"
-            android:parentActivityName="org.devfleet.android.minerhelper.MainActivity">
+            android:parentActivityName="org.devfleet.android.minerhelper.priceActivities.OrePrices">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.devfleet.android.minerhelper.MainActivity" />
+                android:value="org.devfleet.android.minerhelper.priceActivities.OrePrices" />
+        </activity>
+        <activity android:name=".LaunchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
