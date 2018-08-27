@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import org.devfleet.android.minerhelper.R;
 import org.devfleet.android.minerhelper.selectionSettings.OreSelection;
-import org.devfleet.android.minerhelper.systemSettings.SystemC;
+import org.devfleet.android.minerhelper.systemSettings.OreSystemSelection;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +33,7 @@ public class OrePrices extends BasePrices {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.buttons, menu);
+        inflater.inflate(R.menu.buttons_ore, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -59,7 +59,7 @@ public class OrePrices extends BasePrices {
     }
 
     void launchSystemSettings() {
-        Intent launchSystemC = new Intent(this, SystemC.class);
+        Intent launchSystemC = new Intent(this, OreSystemSelection.class);
         startActivity(launchSystemC);
     }
 

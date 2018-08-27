@@ -6,7 +6,7 @@ import android.preference.PreferenceFragment;
 import org.devfleet.android.minerhelper.R;
 
 
-public class SystemCFragment extends PreferenceFragment {
+public class MineralSystemSelectionFragment extends PreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -6,6 +6,12 @@
         <item>Alphabetically</item>
     </string-array>
 
+    <string-array name="sortOptionsMi">
+        <item>Default</item>
+        <item>Alphabetically</item>
+        <item>Price</item>
+    </string-array>
+
     <string-array name="BS">
         <item>Compressed Sell</item>
         <item>Compressed Buy</item>
@@ -148,6 +154,18 @@
         <item>Krystallos</item>
     </string-array>
 
+    <string-array name="NamesMi">
+        <item>Not a valid value</item>
+        <item>Tritanium</item>
+        <item>Pyerite</item>
+        <item>Mexallon</item>
+        <item>Isogen</item>
+        <item>Nocxium</item>
+        <item>Zydrine</item>
+        <item>Megacyte</item>
+        <item>Morphite</item>
+    </string-array>
+
     <string-array name="numsI">
         <item>16262</item><item>16265</item><item>16264</item><item>16263</item><item>17978</item><item>17976</item><item>17975</item><item>17977</item><item>16266</item><item>16267</item><item>16268</item><item>16269</item><item>28434</item><item>28444</item><item>28433</item><item>28438</item><item>28436</item><item>28441</item><item>28443</item><item>28442</item><item>28439</item><item>28435</item><item>28437</item><item>28440</item>
     </string-array>
@@ -219,6 +237,17 @@
         <item>10</item>
         <item>10</item>
         <item>10</item>
+    </string-array>
+
+    <string-array name="numsMi">
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>11399</item>
     </string-array>
 
 </resources>

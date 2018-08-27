@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import org.devfleet.android.minerhelper.priceActivities.GasPrices;
 import org.devfleet.android.minerhelper.priceActivities.IcePrices;
+import org.devfleet.android.minerhelper.priceActivities.MineralPrices;
 import org.devfleet.android.minerhelper.priceActivities.OrePrices;
 
 public class LaunchActivity extends AppCompatActivity {
@@ -26,6 +27,9 @@ public class LaunchActivity extends AppCompatActivity {
                 break;
             case "Gas":
                 launchIntent = new Intent(this, GasPrices.class);
+                break;
+            case "Mineral":
+                launchIntent = new Intent(this, MineralPrices.class);
                 break;
             default:
                 launchIntent = new Intent(this, OrePrices.class);

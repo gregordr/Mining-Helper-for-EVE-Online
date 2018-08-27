@@ -1,10 +1,12 @@
 package org.devfleet.android.minerhelper.priceActivities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,30 +17,31 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.devfleet.android.minerhelper.R;
-import org.devfleet.android.minerhelper.selectionSettings.IceSelection;
-import org.devfleet.android.minerhelper.systemSettings.IceSystemSelection;
+import org.devfleet.android.minerhelper.selectionSettings.MineralSelection;
+import org.devfleet.android.minerhelper.systemSettings.MineralSystemSelection;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
 
-public class IcePrices extends BasePrices {
+public class MineralPrices extends BasePrices {
 
-    private final int[] Sort = new int[13];
+    private final int[] Sort = new int[9];
     private GreenAdapter mAdapter;
     private RecyclerView mNumbersList;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.buttons_ice, menu);
+        inflater.inflate(R.menu.buttons_minerals, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        base = "https://market.fuzzwork.co.uk/aggregates/?types=16262,16265,16264,16263,17978,17976,17975,17977,16266,16267,16268,16269,28434,28444,28433,28438,28436,28441,28443,28442,28439,28435,28437,28440";
+
+        base = "https://market.fuzzwork.co.uk/aggregates/?types=34,35,36,37,38,39,40,11399";
 
         super.onCreate(savedInstanceState);
 
@@ -56,59 +59,78 @@ public class IcePrices extends BasePrices {
     }
 
     void launchSystemSettings() {
-        Intent launchSystemC = new Intent(this, IceSystemSelection.class);
+        Intent launchSystemC = new Intent(this, MineralSystemSelection.class);
         startActivity(launchSystemC);
     }
 
     void launchSelectionSettings() {
-        Intent launchOreC = new Intent(this, IceSelection.class);
+        Intent launchOreC = new Intent(this, MineralSelection.class);
         startActivity(launchOreC);
     }
 
     void sortBy() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MineralPrices.this);
+        builder.setTitle(R.string.dialog_message);
+        builder.setItems(R.array.sortOptionsMi, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MineralPrices.this);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                switch (which) {
+                    case 0:
+                        editor.putString("SortMi", "Default");
+                        break;
+                    case 1:
+                        editor.putString("SortMi", "Name");
+                        break;
+                    case 2:
+                        editor.putString("SortMi", "Price");
+                        break;
+                }
+                editor.commit();
+                resort();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void getInfo(String s) {
         JSONObject obj = null;
         try {
-
             obj = new JSONObject(s);
-
-
         } catch (Throwable ignored) {
-
         }
 
-        String[] nums = getResources().getStringArray(R.array.numsI);
+        String[] nums = getResources().getStringArray(R.array.numsMi);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i != 9; i++) {
             try {
-                editor.putFloat("Uncompressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed SellMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i != 9; i++) {
             try {
-                editor.putFloat("Uncompressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Uncompressed BuyMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i != 9; i++) {
             try {
-                editor.putFloat("Compressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Compressed SellMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i != 9; i++) {
             try {
-                editor.putFloat("Compressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Compressed BuyMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -129,8 +151,8 @@ public class IcePrices extends BasePrices {
         SharedPreferences.Editor editor = sharedPref.edit();
 
 
-        for (int i = 1; i != 13; i++) {
-            if (key.equals("CustomSI" + String.valueOf(i)) || key.equals("Perc") || key.equals("MPC") || key.equals("Time") || key.equals("Min")) {
+        for (int i = 1; i != 49; i++) {
+            if (key.equals("CustomSMi" + String.valueOf(i)) || key.equals("Perc") || key.equals("MPC") || key.equals("Time") || key.equals("Min")) {
                 {
                     if (sharedPref.getString(key, "0.00").equals("")) {
                         editor.remove(key);
@@ -146,78 +168,54 @@ public class IcePrices extends BasePrices {
     }
 
     void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(IcePrices.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MineralPrices.this);
         int i = 1;
-        for (int c = 1; !(c == 13); c++) {
+        for (int c = 1; !(c == 9); c++) {
             switch (c) {
                 case 1:
-                    if (sharedPref.getBoolean("Clear_Icicle", true)) {
+                    if (sharedPref.getBoolean("Tritanium", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 2:
-                    if (sharedPref.getBoolean("White_Glaze", true)) {
+                    if (sharedPref.getBoolean("Pyerite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 3:
-                    if (sharedPref.getBoolean("Blue_Ice", true)) {
+                    if (sharedPref.getBoolean("Mexallon", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 4:
-                    if (sharedPref.getBoolean("Glacial_Mass", true)) {
+                    if (sharedPref.getBoolean("Isogen", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 5:
-                    if (sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {
+                    if (sharedPref.getBoolean("Nocxium", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 6:
-                    if (sharedPref.getBoolean("Pristine_White_Glaze", true)) {
+                    if (sharedPref.getBoolean("Zydrine", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 7:
-                    if (sharedPref.getBoolean("Thick_Blue_Ice", true)) {
+                    if (sharedPref.getBoolean("Megacyte", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 8:
-                    if (sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {
-                        Sort[i] = c;
-                        i++;
-                    }
-                    break;
-                case 9:
-                    if (sharedPref.getBoolean("Glare_Crust", true)) {
-                        Sort[i] = c;
-                        i++;
-                    }
-                    break;
-                case 10:
-                    if (sharedPref.getBoolean("Dark_Glitter", true)) {
-                        Sort[i] = c;
-                        i++;
-                    }
-                    break;
-                case 11:
-                    if (sharedPref.getBoolean("Gelidus", true)) {
-                        Sort[i] = c;
-                        i++;
-                    }
-                    break;
-                case 12:
-                    if (sharedPref.getBoolean("Krystallos", true)) {
+                    if (sharedPref.getBoolean("Morphite", true)) {
                         Sort[i] = c;
                         i++;
                     }
@@ -225,23 +223,49 @@ public class IcePrices extends BasePrices {
             }
         }
 
-        boolean t = true;
-        while (t) {
-            t = false;
-            for (int k = 1; k < i - 1; k++) {
-                if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "I" + String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "I" + String.valueOf(Sort[k + 1]), (float) 0.00)) {
-                    int r = Sort[k];
-                    Sort[k] = Sort[k + 1];
-                    Sort[k + 1] = r;
-                    t = true;
+        switch (sharedPref.getString("SortMi", "Default")) {
+            case "Name":
+                String NamesMi[] = getResources().getStringArray(R.array.NamesMi);
+                boolean tT = true;
+                while (tT) {
+                    tT = false;
+                    for (int k = 1; k < i - 1; k++) {
+                        if (NamesMi[Sort[k]].compareTo(NamesMi[Sort[k + 1]]) < 1) {
+                            int r = Sort[k];
+                            Sort[k] = Sort[k + 1];
+                            Sort[k + 1] = r;
+                            tT = true;
+                        }
+                    }
                 }
-            }
+                int[] SortRR = new int[i];
+                for (int KKK = 1; KKK < i; KKK++) {
+                    SortRR[KKK] = Sort[i - KKK];
+                }
+                System.arraycopy(SortRR, 1, Sort, 1, i - 1);
+                break;
+            case "Price":
+                boolean t = true;
+                while (t) {
+                    t = false;
+                    for (int k = 1; k < i - 1; k++) {
+                        if (sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "Mi" + String.valueOf(Sort[k]), (float) 0.00) > sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "Mi" + String.valueOf(Sort[k + 1]), (float) 0.00)) {
+                            int r = Sort[k];
+                            Sort[k] = Sort[k + 1];
+                            Sort[k + 1] = r;
+                            t = true;
+                        }
+                    }
+                }
+                int[] SortR = new int[i];
+                for (int KKK = 1; KKK < i; KKK++) {
+                    SortR[KKK] = Sort[i - KKK];
+                }
+                System.arraycopy(SortR, 1, Sort, 1, i - 1);
+                break;
+            default:
+                break;
         }
-        int[] SortR = new int[i];
-        for (int KKK = 1; KKK < i; KKK++) {
-            SortR[KKK] = Sort[i - KKK];
-        }
-        System.arraycopy(SortR, 1, Sort, 1, i - 1);
 
         mAdapter.notifyDataSetChanged();
     }
@@ -249,19 +273,19 @@ public class IcePrices extends BasePrices {
     void writeStringstofloats() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
-        for (int count = 1; count != 13; count++) {
-            editor.putFloat("CustomI" + count, Float.parseFloat(sharedPref.getString("CustomSI" + count, "0.00")));
+        for (int count = 1; count != 9; count++) {
+            editor.putFloat("CustomMi" + count, Float.parseFloat(sharedPref.getString("CustomSMi" + count, "0.00")));
         }
         editor.commit();
     }
 
     public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder> {
 
-        private final String TAG = GreenAdapter.class.getSimpleName();
         final SharedPreferences sharedPref;
+        private final String TAG = GreenAdapter.class.getSimpleName();
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(IcePrices.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(MineralPrices.this);
         }
 
         @Override
@@ -301,49 +325,34 @@ public class IcePrices extends BasePrices {
         }
 
 
-
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(IcePrices.this);
-            if (sharedPref.getBoolean("Clear_Icicle", true)) {
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MineralPrices.this);
+            if (sharedPref.getBoolean("Tritanium", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("White_Glaze", true)) {
+            if (sharedPref.getBoolean("Pyerite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Blue_Ice", true)) {
+            if (sharedPref.getBoolean("Mexallon", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glacial_Mass", true)) {
+            if (sharedPref.getBoolean("Isogen", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Enriched_Clear_Icicle", true)) {
+            if (sharedPref.getBoolean("Nocxium", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Pristine_White_Glaze", true)) {
+            if (sharedPref.getBoolean("Zydrine", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Thick_Blue_Ice", true)) {
+            if (sharedPref.getBoolean("Megacyte", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Smooth_Glacial_Mass", true)) {
+            if (sharedPref.getBoolean("Morphite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("Glare_Crust", true)) {
-                i++;
-            }
-            if (sharedPref.getBoolean("Dark_Glitter", true)) {
-                i++;
-            }
-            if (sharedPref.getBoolean("Gelidus", true)) {
-                i++;
-            }
-            if (sharedPref.getBoolean("Krystallos", true)) {
-                i++;
-            }
-
-
             i++;
 
             return i;
@@ -356,7 +365,7 @@ public class IcePrices extends BasePrices {
             final TextView PPI;
             final TextView PPV;
             final TextView PPH;
-            final String[] Name = getResources().getStringArray(R.array.NamesI);
+            final String[] Name = getResources().getStringArray(R.array.NamesMi);
 
             NumberViewHolder(View itemView) {
                 super(itemView);
@@ -380,9 +389,9 @@ public class IcePrices extends BasePrices {
                         break;
                     default:
                         listItemNumberView.setText(Name[Sort[listIndex]]);
-                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)));
-                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat("1000")));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("MinIce", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"I"+String.valueOf(Sort[listIndex]), (float) 0.00)/1000000/Float.parseFloat(sharedPref.getString("TimeIce", "300")))+"M");
+                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "Mi" + String.valueOf(Sort[listIndex]), (float) 0.00)));
+                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "Mi" + String.valueOf(Sort[listIndex]), (float) 0.00) * 100));
+                        PPH.setText("-------");
                 }
             }
         }

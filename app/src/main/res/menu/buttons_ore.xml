@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@mipmap/ic_refresh"
+        android:title="@string/action_refresh"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@mipmap/ic_sort"
+        android:title="@string/action_sort"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@mipmap/ic_settings"
+        android:title="@string/action_systemC"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_select"
+        android:icon="@mipmap/ic_settings"
+        android:title="@string/action_oreC"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ice"
+        android:icon="@mipmap/ic_settings"
+        android:title="@string/action_ice"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_gas"
+        android:icon="@mipmap/ic_settings"
+        android:title="Go to gas"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_mineral"
+        android:icon="@mipmap/ic_settings"
+        android:title="Go to minerals"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@mipmap/ic_settings"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+</menu>

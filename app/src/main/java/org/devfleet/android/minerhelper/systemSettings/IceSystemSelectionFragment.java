@@ -6,7 +6,7 @@ import android.preference.PreferenceFragment;
 import org.devfleet.android.minerhelper.R;
 
 
-public class SystemCiceFragment extends PreferenceFragment {
+public class IceSystemSelectionFragment extends PreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

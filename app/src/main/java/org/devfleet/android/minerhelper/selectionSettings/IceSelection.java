@@ -58,14 +58,14 @@ public class IceSelection extends AppCompatActivity {
     }
 
     private void getViews() {
-        Clear_Icicle = findViewById(R.id.Clear_Icicle);
-        White_Glaze = findViewById(R.id.White_Glaze);
-        Blue_Ice = findViewById(R.id.Blue_Ice);
-        Glacial_Mass = findViewById(R.id.Glacial_Mass);
-        Enriched_Clear_Icicle = findViewById(R.id.Enriched_Clear_Icicle);
-        Pristine_White_Glaze = findViewById(R.id.Pristine_White_Glaze);
-        Thick_Blue_Ice = findViewById(R.id.Thick_Blue_Ice);
-        Smooth_Glacial_Mass = findViewById(R.id.Smooth_Glacial_Mass);
+        Clear_Icicle = findViewById(R.id.Nocxium);
+        White_Glaze = findViewById(R.id.Tritanium);
+        Blue_Ice = findViewById(R.id.Mexallon);
+        Glacial_Mass = findViewById(R.id.Pyerite);
+        Enriched_Clear_Icicle = findViewById(R.id.Megacyte);
+        Pristine_White_Glaze = findViewById(R.id.Zydrine);
+        Thick_Blue_Ice = findViewById(R.id.Isogen);
+        Smooth_Glacial_Mass = findViewById(R.id.Morphite);
         Glare_Crust = findViewById(R.id.Glare_Crust);
         Dark_Glitter = findViewById(R.id.Dark_Glitter);
         Gelidus = findViewById(R.id.Gelidus);

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:entries="@array/Systems"
+        android:entryValues="@array/Systems"
+        android:key="SystemNames"
+        android:negativeButtonText=""
+        android:summary="%s"
+        android:title="System?"></ListPreference>
+    <ListPreference
+        android:entries="@array/BS"
+        android:entryValues="@array/BS"
+        android:key="BS"
+        android:negativeButtonText=""
+        android:summary="%s"
+        android:title="What prices?"></ListPreference>
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:inputType="numberDecimal"
+        android:key="Perc"
+        android:title="@string/Perc" />
+
+    <PreferenceScreen
+        android:summary="@string/CustomText"
+        android:title="Add custom mineral prices">
+        <EditTextPreference
+
+            android:inputType="numberDecimal"
+            android:key="CustomSMi1"
+            android:title="Tritanium" />
+
+        <EditTextPreference
+
+            android:inputType="numberDecimal"
+            android:key="CustomSMi2"
+            android:title="Pyerite" />
+
+        <EditTextPreference
+
+            android:inputType="numberDecimal"
+            android:key="CustomSMi3"
+            android:title="Mexallon" />
+
+        <EditTextPreference
+
+            android:inputType="numberDecimal"
+            android:key="CustomSMi4"
+            android:title="Isogen" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMi5"
+            android:title="Nocxium" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMi6"
+            android:title="Zydrine" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMi7"
+            android:title="Megacyte" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMi8"
+            android:title="Morphite" />
+    </PreferenceScreen>
+</PreferenceScreen>

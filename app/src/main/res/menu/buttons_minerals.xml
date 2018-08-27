@@ -20,10 +20,17 @@
         />
     <item
         android:id="@+id/action_select"
-        android:title="@string/action_oreC"
+        android:icon="@mipmap/ic_settings"
+        android:title="Chose minerals"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_ore"
+        android:title="Go to ore"
         android:icon="@mipmap/ic_settings"
         app:showAsAction="never"
         />
+
     <item
         android:id="@+id/action_ice"
         android:title="@string/action_ice"

@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 
 import org.devfleet.android.minerhelper.R;
 
-public class SystemC extends AppCompatActivity {
+public class GasSystemSelection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_system_c);
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new SystemCFragment())
+                .replace(android.R.id.content, new GasSystemSelectionFragment())
                 .commit();
     }
 }

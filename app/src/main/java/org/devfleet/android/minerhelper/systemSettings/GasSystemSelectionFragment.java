@@ -5,7 +5,7 @@ import android.preference.PreferenceFragment;
 
 import org.devfleet.android.minerhelper.R;
 
-public class SystemCgasFragment extends PreferenceFragment {
+public class GasSystemSelectionFragment extends PreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

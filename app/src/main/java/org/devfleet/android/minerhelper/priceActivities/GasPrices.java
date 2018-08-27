@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import org.devfleet.android.minerhelper.R;
 import org.devfleet.android.minerhelper.selectionSettings.GasSelection;
-import org.devfleet.android.minerhelper.systemSettings.SystemCgas;
+import org.devfleet.android.minerhelper.systemSettings.GasSystemSelection;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +33,7 @@ public class GasPrices extends BasePrices {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.buttonsgas, menu);
+        inflater.inflate(R.menu.buttons_gas, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -58,7 +58,7 @@ public class GasPrices extends BasePrices {
     }
 
     void launchSystemSettings() {
-        Intent launchSystemC = new Intent(this, SystemCgas.class);
+        Intent launchSystemC = new Intent(this, GasSystemSelection.class);
         startActivity(launchSystemC);
     }
 
