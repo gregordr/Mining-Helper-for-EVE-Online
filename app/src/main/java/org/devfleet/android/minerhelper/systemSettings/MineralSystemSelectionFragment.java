@@ -12,6 +12,6 @@ public class MineralSystemSelectionFragment extends PreferenceFragment {
         super.onCreate(savedInstanceState);
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.systemprefs);
+        addPreferencesFromResource(R.xml.systemprefsmin);
     }
 }

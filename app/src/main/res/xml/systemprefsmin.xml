@@ -6,14 +6,15 @@
         android:key="SystemNames"
         android:negativeButtonText=""
         android:summary="%s"
-        android:title="System?"></ListPreference>
+        android:title="System?" />
+
     <ListPreference
         android:entries="@array/BS"
         android:entryValues="@array/BS"
         android:key="BS"
         android:negativeButtonText=""
         android:summary="%s"
-        android:title="What prices?"></ListPreference>
+        android:title="What prices?" />
 
     <EditTextPreference
         android:defaultValue="100"
