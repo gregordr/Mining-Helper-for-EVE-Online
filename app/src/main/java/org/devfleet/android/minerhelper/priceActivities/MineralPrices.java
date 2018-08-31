@@ -238,11 +238,11 @@ public class MineralPrices extends BasePrices {
                         }
                     }
                 }
-                int[] SortRR = new int[i];
-                for (int KKK = 1; KKK < i; KKK++) {
-                    SortRR[KKK] = Sort[i - KKK];
+                int[] reverseArray1 = new int[i];
+                for (int j = 1; j < i; j++) {
+                    reverseArray1[j] = Sort[i - j];
                 }
-                System.arraycopy(SortRR, 1, Sort, 1, i - 1);
+                System.arraycopy(reverseArray1, 1, Sort, 1, i - 1);
                 break;
             case "Price":
                 boolean t = true;
@@ -257,11 +257,11 @@ public class MineralPrices extends BasePrices {
                         }
                     }
                 }
-                int[] SortR = new int[i];
-                for (int KKK = 1; KKK < i; KKK++) {
-                    SortR[KKK] = Sort[i - KKK];
+                int[] reverseArray2 = new int[i];
+                for (int j = 1; j < i; j++) {
+                    reverseArray2[j] = Sort[i - j];
                 }
-                System.arraycopy(SortR, 1, Sort, 1, i - 1);
+                System.arraycopy(reverseArray2, 1, Sort, 1, i - 1);
                 break;
             default:
                 break;

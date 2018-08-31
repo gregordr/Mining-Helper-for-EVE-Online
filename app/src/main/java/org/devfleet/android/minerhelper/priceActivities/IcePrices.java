@@ -237,11 +237,11 @@ public class IcePrices extends BasePrices {
                 }
             }
         }
-        int[] SortR = new int[i];
-        for (int KKK = 1; KKK < i; KKK++) {
-            SortR[KKK] = Sort[i - KKK];
+        int[] reverseArray2 = new int[i];
+        for (int j = 1; j < i; j++) {
+            reverseArray2[j] = Sort[i - j];
         }
-        System.arraycopy(SortR, 1, Sort, 1, i - 1);
+        System.arraycopy(reverseArray2, 1, Sort, 1, i - 1);
 
         mAdapter.notifyDataSetChanged();
     }
