@@ -385,7 +385,27 @@ public class MineralPrices extends BasePrices {
                         }
                         TextView listItemNumberView2 = itemView.findViewById(R.id.TV2);
                         listItemNumberView2.setText(sharedPref.getString("SystemNames", "Jita") + " ");
-                        listItemNumberView2.append(sharedPref.getString("BS", "Compressed Sell") + " prices");
+
+                        String BSt = "Custom";
+                        switch (sharedPref.getString("BS", "Compressed Sell")) {
+                            case "Custom":
+                                BSt = "Custom";
+                                break;
+                            case "Compressed Buy":
+                                BSt = "Buy";
+                                break;
+                            case "Compressed Sell":
+                                BSt = "Sell";
+                                break;
+                            case "Uncompressed Sell":
+                                BSt = "Sell";
+                                break;
+                            case "Uncompressed Buy":
+                                BSt = "Buy";
+                                break;
+                        }
+
+                        listItemNumberView2.append(BSt + " prices");
                         break;
                     default:
                         listItemNumberView.setText(Name[Sort[listIndex]]);
