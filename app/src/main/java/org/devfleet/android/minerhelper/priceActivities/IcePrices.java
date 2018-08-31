@@ -26,7 +26,6 @@ public class IcePrices extends BasePrices {
 
     private final int[] Sort = new int[13];
     private GreenAdapter mAdapter;
-    private RecyclerView mNumbersList;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -43,7 +42,7 @@ public class IcePrices extends BasePrices {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mNumbersList = findViewById(R.id.RecV);
+        RecyclerView mNumbersList = findViewById(R.id.RecV);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
@@ -84,13 +83,13 @@ public class IcePrices extends BasePrices {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -98,7 +97,7 @@ public class IcePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
@@ -106,7 +105,7 @@ public class IcePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=13; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {

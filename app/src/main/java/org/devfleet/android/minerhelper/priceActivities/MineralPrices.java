@@ -28,7 +28,6 @@ public class MineralPrices extends BasePrices {
 
     private final int[] Sort = new int[9];
     private GreenAdapter mAdapter;
-    private RecyclerView mNumbersList;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,13 +39,12 @@ public class MineralPrices extends BasePrices {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         base = "https://market.fuzzwork.co.uk/aggregates/?types=34,35,36,37,38,39,40,11399";
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mNumbersList = findViewById(R.id.RecV);
+        RecyclerView mNumbersList = findViewById(R.id.RecV);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
@@ -106,13 +104,13 @@ public class MineralPrices extends BasePrices {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i != 9; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed SellMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i != 9; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed BuyMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -120,7 +118,7 @@ public class MineralPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i != 9; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed SellMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
@@ -128,7 +126,7 @@ public class MineralPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i != 9; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed BuyMi" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {

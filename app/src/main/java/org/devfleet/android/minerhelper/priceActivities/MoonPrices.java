@@ -17,14 +17,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.devfleet.android.minerhelper.R;
-import org.devfleet.android.minerhelper.selectionSettings.GasSelection;
 import org.devfleet.android.minerhelper.systemSettings.GasSystemSelection;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
 
-public class GasPrices extends BasePrices {
+public class MoonPrices extends BasePrices {
 
     private final int[] Sort = new int[26];
     private GreenAdapter mAdapter;
@@ -62,26 +61,26 @@ public class GasPrices extends BasePrices {
     }
 
     void launchSelectionSettings() {
-        Intent launchOreC = new Intent(this, GasSelection.class);
-        startActivity(launchOreC);
+        //Intent launchOreC = new Intent(this, GasSelection.class);
+        //startActivity(launchOreC);
     }
 
     void sortBy() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(GasPrices.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MoonPrices.this);
         builder.setTitle(R.string.dialog_message);
         builder.setItems(R.array.sortOptions, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
+                SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MoonPrices.this);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 switch (which) {
                     case 0:
-                        editor.putString("SortG","PPV");
+                        editor.putString("SortMo", "PPV");
                         break;
                     case 1:
-                        editor.putString("SortG","PPU");
+                        editor.putString("SortMo", "PPU");
                         break;
                     case 2:
-                        editor.putString("SortG","PPN");
+                        editor.putString("SortMo", "PPN");
                         break;
                 }
                 editor.commit();
@@ -99,20 +98,20 @@ public class GasPrices extends BasePrices {
         } catch (Throwable ignored) {
         }
 
-        String[] nums = getResources().getStringArray(R.array.numsG);
+        String[] nums = getResources().getStringArray(R.array.numsMi);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
         for (int i = 1; i <= nums.length; i++) {
             try {
-                editor.putFloat("Uncompressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Uncompressed SellMo" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
         for (int i = 1; i <= nums.length; i++) {
             try {
-                editor.putFloat("Uncompressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Uncompressed BuyMo" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -120,7 +119,7 @@ public class GasPrices extends BasePrices {
 
         for (int i = 1; i <= nums.length; i++) {
             try {
-                editor.putFloat("Compressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
+                editor.putFloat("Compressed SellMo" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -128,7 +127,7 @@ public class GasPrices extends BasePrices {
 
         for (int i = 1; i <= nums.length; i++) {
             try {
-                editor.putFloat("Compressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
+                editor.putFloat("Compressed BuyMo" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i - 1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -150,7 +149,7 @@ public class GasPrices extends BasePrices {
 
 
         for (int i = 1; i != 26; i++) {
-            if (key.equals("CustomSG" + String.valueOf(i)) || key.equals("Perc") || key.equals("MPC") || key.equals("Time") || key.equals("Min")) {
+            if (key.equals("CustomSMo" + String.valueOf(i)) || key.equals("Perc") || key.equals("MPC") || key.equals("Time") || key.equals("Min")) {
                 {
                     if (sharedPref.getString(key, "0.00").equals("")) {
                         editor.remove(key);
@@ -166,7 +165,7 @@ public class GasPrices extends BasePrices {
     }
 
     void resort() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MoonPrices.this);
         int i = 1;
         for (int c = 1; !(c == 26); c++) {
             switch (c) {
@@ -383,15 +382,15 @@ public class GasPrices extends BasePrices {
 
     public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder> {
 
-        private final String TAG = GasPrices.GreenAdapter.class.getSimpleName();
         final SharedPreferences sharedPref;
+        private final String TAG = MoonPrices.GreenAdapter.class.getSimpleName();
 
         GreenAdapter() {
-            sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
+            sharedPref = PreferenceManager.getDefaultSharedPreferences(MoonPrices.this);
         }
 
         @Override
-        public GasPrices.GreenAdapter.NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        public MoonPrices.GreenAdapter.NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
             Context context = viewGroup.getContext();
             int layoutIdForListItem;
             if (viewType == 1) {
@@ -403,7 +402,7 @@ public class GasPrices extends BasePrices {
             boolean shouldAttachToParentImmediately = false;
 
             View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
-            GasPrices.GreenAdapter.NumberViewHolder viewHolder = new GasPrices.GreenAdapter.NumberViewHolder(view);
+            MoonPrices.GreenAdapter.NumberViewHolder viewHolder = new MoonPrices.GreenAdapter.NumberViewHolder(view);
             return viewHolder;
         }
 
@@ -421,7 +420,7 @@ public class GasPrices extends BasePrices {
         }
 
         @Override
-        public void onBindViewHolder(GasPrices.GreenAdapter.NumberViewHolder holder, int position) {
+        public void onBindViewHolder(MoonPrices.GreenAdapter.NumberViewHolder holder, int position) {
 
             holder.bind(position);
         }
@@ -430,7 +429,7 @@ public class GasPrices extends BasePrices {
         @Override
         public int getItemCount() {
             int i = 0;
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(GasPrices.this);
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(MoonPrices.this);
 
             if (sharedPref.getBoolean("C28", true)) {
                 i++;
@@ -568,22 +567,32 @@ public class GasPrices extends BasePrices {
                         listItemNumberView2.setText(sharedPref.getString("SystemNames", "Jita") + " ");
 
                         String BSt = "Custom";
-                        switch (sharedPref.getString("BS", "Compressed Sell")){
-                            case "Custom": BSt="Custom"; break;
-                            case "Compressed Buy": BSt="Buy"; break;
-                            case "Compressed Sell": BSt="Sell"; break;
-                            case "Uncompressed Sell": BSt="Sell"; break;
-                            case "Uncompressed Buy": BSt="Buy"; break;
+                        switch (sharedPref.getString("BS", "Compressed Sell")) {
+                            case "Custom":
+                                BSt = "Custom";
+                                break;
+                            case "Compressed Buy":
+                                BSt = "Buy";
+                                break;
+                            case "Compressed Sell":
+                                BSt = "Sell";
+                                break;
+                            case "Uncompressed Sell":
+                                BSt = "Sell";
+                                break;
+                            case "Uncompressed Buy":
+                                BSt = "Buy";
+                                break;
                         }
 
                         listItemNumberView2.append(BSt + " prices");
                         break;
                     default:
                         listItemNumberView.setText(Name[Sort[listIndex]]);
-                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)));
-                        String VolG[]=getResources().getStringArray(R.array.VolG);
-                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("AmountGas", "10"))*Float.parseFloat(sharedPref.getString("MinG", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])/1000000/Float.parseFloat(sharedPref.getString("TimeGas", "30")))+"M");
+                        PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00)));
+                        String VolG[] = getResources().getStringArray(R.array.VolG);
+                        PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00) / Float.parseFloat(VolG[Sort[listIndex]])));
+                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * 3600 * Float.parseFloat(sharedPref.getString("AmountGas", "10")) * Float.parseFloat(sharedPref.getString("MinG", "1")) * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00) / Float.parseFloat(VolG[Sort[listIndex]]) / 1000000 / Float.parseFloat(sharedPref.getString("TimeGas", "30"))) + "M");
                 }
             }
         }
