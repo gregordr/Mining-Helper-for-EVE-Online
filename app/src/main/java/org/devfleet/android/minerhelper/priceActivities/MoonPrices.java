@@ -98,10 +98,125 @@ public class MoonPrices extends BasePrices {
         } catch (Throwable ignored) {
         }
 
-        String[] nums = getResources().getStringArray(R.array.numsMi);
+        Float b34;
+        Float b35;
+        Float b36;
+        Float b38;
+        Float b37;
+        Float b39;
+        Float b40;
+        Float b16633;
+        Float b16636;
+        Float b16635;
+        Float b16634;
+        Float b16640;
+        Float b16639;
+        Float b16637;
+        Float b16638;
+        Float b16641;
+        Float b16643;
+        Float b16644;
+        Float b16642;
+        Float b16649;
+        Float b16646;
+        Float b16647;
+        Float b16648;
+        Float b16652;
+        Float b16651;
+        Float b16650;
+        Float b16653;
+
+        Float s34 = null;
+        Float s35 = null;
+        Float s36 = null;
+        Float s38;
+        Float s37;
+        Float s39;
+        Float s40;
+        Float s16633 = null;
+        Float s16636;
+        Float s16635;
+        Float s16634;
+        Float s16640;
+        Float s16639;
+        Float s16637;
+        Float s16638;
+        Float s16641;
+        Float s16643;
+        Float s16644;
+        Float s16642;
+        Float s16649;
+        Float s16646;
+        Float s16647;
+        Float s16648;
+        Float s16652;
+        Float s16651;
+        Float s16650;
+        Float s16653;
+
+        try {
+            b34 = Float.parseFloat(String.valueOf(obj.getJSONObject("34").getJSONObject("buy").get("max")));
+            b35 = Float.parseFloat(String.valueOf(obj.getJSONObject("35").getJSONObject("buy").get("max")));
+            b36 = Float.parseFloat(String.valueOf(obj.getJSONObject("36").getJSONObject("buy").get("max")));
+            b38 = Float.parseFloat(String.valueOf(obj.getJSONObject("38").getJSONObject("buy").get("max")));
+            b37 = Float.parseFloat(String.valueOf(obj.getJSONObject("37").getJSONObject("buy").get("max")));
+            b39 = Float.parseFloat(String.valueOf(obj.getJSONObject("39").getJSONObject("buy").get("max")));
+            b40 = Float.parseFloat(String.valueOf(obj.getJSONObject("40").getJSONObject("buy").get("max")));
+            b16633 = Float.parseFloat(String.valueOf(obj.getJSONObject("16633").getJSONObject("buy").get("max")));
+            b16636 = Float.parseFloat(String.valueOf(obj.getJSONObject("16636").getJSONObject("buy").get("max")));
+            b16635 = Float.parseFloat(String.valueOf(obj.getJSONObject("16635").getJSONObject("buy").get("max")));
+            b16634 = Float.parseFloat(String.valueOf(obj.getJSONObject("16634").getJSONObject("buy").get("max")));
+            b16640 = Float.parseFloat(String.valueOf(obj.getJSONObject("16640").getJSONObject("buy").get("max")));
+            b16639 = Float.parseFloat(String.valueOf(obj.getJSONObject("16639").getJSONObject("buy").get("max")));
+            b16637 = Float.parseFloat(String.valueOf(obj.getJSONObject("16637").getJSONObject("buy").get("max")));
+            b16638 = Float.parseFloat(String.valueOf(obj.getJSONObject("16638").getJSONObject("buy").get("max")));
+            b16641 = Float.parseFloat(String.valueOf(obj.getJSONObject("16641").getJSONObject("buy").get("max")));
+            b16643 = Float.parseFloat(String.valueOf(obj.getJSONObject("16643").getJSONObject("buy").get("max")));
+            b16644 = Float.parseFloat(String.valueOf(obj.getJSONObject("16644").getJSONObject("buy").get("max")));
+            b16642 = Float.parseFloat(String.valueOf(obj.getJSONObject("16642").getJSONObject("buy").get("max")));
+            b16649 = Float.parseFloat(String.valueOf(obj.getJSONObject("16649").getJSONObject("buy").get("max")));
+            b16646 = Float.parseFloat(String.valueOf(obj.getJSONObject("16646").getJSONObject("buy").get("max")));
+            b16647 = Float.parseFloat(String.valueOf(obj.getJSONObject("16647").getJSONObject("buy").get("max")));
+            b16648 = Float.parseFloat(String.valueOf(obj.getJSONObject("16648").getJSONObject("buy").get("max")));
+            b16652 = Float.parseFloat(String.valueOf(obj.getJSONObject("16652").getJSONObject("buy").get("max")));
+            b16651 = Float.parseFloat(String.valueOf(obj.getJSONObject("16651").getJSONObject("buy").get("max")));
+            b16650 = Float.parseFloat(String.valueOf(obj.getJSONObject("16650").getJSONObject("buy").get("max")));
+            b16653 = Float.parseFloat(String.valueOf(obj.getJSONObject("16653").getJSONObject("buy").get("max")));
+
+            s34 = Float.parseFloat(String.valueOf(obj.getJSONObject("34").getJSONObject("sell").get("min")));
+            s35 = Float.parseFloat(String.valueOf(obj.getJSONObject("35").getJSONObject("sell").get("min")));
+            s36 = Float.parseFloat(String.valueOf(obj.getJSONObject("36").getJSONObject("sell").get("min")));
+            s38 = Float.parseFloat(String.valueOf(obj.getJSONObject("38").getJSONObject("sell").get("min")));
+            s37 = Float.parseFloat(String.valueOf(obj.getJSONObject("37").getJSONObject("sell").get("min")));
+            s39 = Float.parseFloat(String.valueOf(obj.getJSONObject("39").getJSONObject("sell").get("min")));
+            s40 = Float.parseFloat(String.valueOf(obj.getJSONObject("40").getJSONObject("sell").get("min")));
+            s16633 = Float.parseFloat(String.valueOf(obj.getJSONObject("16633").getJSONObject("sell").get("min")));
+            s16636 = Float.parseFloat(String.valueOf(obj.getJSONObject("16636").getJSONObject("sell").get("min")));
+            s16635 = Float.parseFloat(String.valueOf(obj.getJSONObject("16635").getJSONObject("sell").get("min")));
+            s16634 = Float.parseFloat(String.valueOf(obj.getJSONObject("16634").getJSONObject("sell").get("min")));
+            s16640 = Float.parseFloat(String.valueOf(obj.getJSONObject("16640").getJSONObject("sell").get("min")));
+            s16639 = Float.parseFloat(String.valueOf(obj.getJSONObject("16639").getJSONObject("sell").get("min")));
+            s16637 = Float.parseFloat(String.valueOf(obj.getJSONObject("16637").getJSONObject("sell").get("min")));
+            s16638 = Float.parseFloat(String.valueOf(obj.getJSONObject("16638").getJSONObject("sell").get("min")));
+            s16641 = Float.parseFloat(String.valueOf(obj.getJSONObject("16641").getJSONObject("sell").get("min")));
+            s16643 = Float.parseFloat(String.valueOf(obj.getJSONObject("16643").getJSONObject("sell").get("min")));
+            s16644 = Float.parseFloat(String.valueOf(obj.getJSONObject("16644").getJSONObject("sell").get("min")));
+            s16642 = Float.parseFloat(String.valueOf(obj.getJSONObject("16642").getJSONObject("sell").get("min")));
+            s16649 = Float.parseFloat(String.valueOf(obj.getJSONObject("16649").getJSONObject("sell").get("min")));
+            s16646 = Float.parseFloat(String.valueOf(obj.getJSONObject("16646").getJSONObject("sell").get("min")));
+            s16647 = Float.parseFloat(String.valueOf(obj.getJSONObject("16647").getJSONObject("sell").get("min")));
+            s16648 = Float.parseFloat(String.valueOf(obj.getJSONObject("16648").getJSONObject("sell").get("min")));
+            s16652 = Float.parseFloat(String.valueOf(obj.getJSONObject("16652").getJSONObject("sell").get("min")));
+            s16651 = Float.parseFloat(String.valueOf(obj.getJSONObject("16651").getJSONObject("sell").get("min")));
+            s16650 = Float.parseFloat(String.valueOf(obj.getJSONObject("16650").getJSONObject("sell").get("min")));
+            s16653 = Float.parseFloat(String.valueOf(obj.getJSONObject("16653").getJSONObject("sell").get("min")));
+        } catch (JSONException e) {
+        }
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putFloat("Uncompressed SellMo" + 1, s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65);
 
         for (int i = 1; i <= nums.length; i++) {
             try {
