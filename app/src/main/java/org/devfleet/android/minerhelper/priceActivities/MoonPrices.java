@@ -503,156 +503,445 @@ public class MoonPrices extends BasePrices {
         for (int c = 1; !(c == 61); c++) {
             switch (c) {
                 case 1:
-                    if (sharedPref.getBoolean("C28", true)) {
+                    if (sharedPref.getBoolean("Bitumens", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 2:
-                    if (sharedPref.getBoolean("C32", true)) {
+                    if (sharedPref.getBoolean("Coesite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 3:
-                    if (sharedPref.getBoolean("C50", true)) {
+                    if (sharedPref.getBoolean("Sylvite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 4:
-                    if (sharedPref.getBoolean("C60", true)) {
+                    if (sharedPref.getBoolean("Zeolites", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 5:
-                    if (sharedPref.getBoolean("C70", true)) {
+                    if (sharedPref.getBoolean("Cobaltite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 6:
-                    if (sharedPref.getBoolean("C72", true)) {
+                    if (sharedPref.getBoolean("Euxenite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 7:
-                    if (sharedPref.getBoolean("C84", true)) {
+                    if (sharedPref.getBoolean("Scheelite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 8:
-                    if (sharedPref.getBoolean("C320", true)) {
+                    if (sharedPref.getBoolean("Titanite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 9:
-                    if (sharedPref.getBoolean("C540", true)) {
+                    if (sharedPref.getBoolean("Chromite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 10:
-                    if (sharedPref.getBoolean("Amber_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Otavite", false)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 11:
-                    if (sharedPref.getBoolean("Azure_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Sperrylite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 12:
-                    if (sharedPref.getBoolean("Celadon_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Vanadinite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 13:
-                    if (sharedPref.getBoolean("Golden_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Carnotite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 14:
-                    if (sharedPref.getBoolean("Lime_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Cinnabar", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 15:
-                    if (sharedPref.getBoolean("Malachite_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Pollucite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 16:
-                    if (sharedPref.getBoolean("Vermillion_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Zircon", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 17:
-                    if (sharedPref.getBoolean("Viridian_Cytoserocin", true)) {
+                    if (sharedPref.getBoolean("Loparite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 18:
-                    if (sharedPref.getBoolean("Amber_Mykoserocin", true)) {
+                    if (sharedPref.getBoolean("Monazite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 19:
-                    if (sharedPref.getBoolean("Azure_Mykoserocin", true)) {
+                    if (sharedPref.getBoolean("Xenotime", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
                 case 20:
-                    if (sharedPref.getBoolean("Celadon_Mykoserocin", true)) {
+                    if (sharedPref.getBoolean("Ytterbite", true)) {
                         Sort[i] = c;
                         i++;
                     }
                     break;
-                case 21:
-                    if (sharedPref.getBoolean("Golden_Mykoserocin", true)) {
-                        Sort[i] = c;
-                        i++;
+                case 1 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Bitumens", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
                     }
                     break;
-                case 22:
-                    if (sharedPref.getBoolean("Lime_Mykoserocin", true)) {
-                        Sort[i] = c;
-                        i++;
+                case 2 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Coesite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
                     }
                     break;
-                case 23:
-                    if (sharedPref.getBoolean("Malachite_Mykoserocin", true)) {
-                        Sort[i] = c;
-                        i++;
+                case 3 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Sylvite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
                     }
                     break;
-                case 24:
-                    if (sharedPref.getBoolean("Vermillion_Mykoserocin", true)) {
-                        Sort[i] = c;
-                        i++;
+                case 4 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Zeolites", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
                     }
                     break;
-                case 25:
-                    if (sharedPref.getBoolean("Viridian_Mykoserocin", true)) {
-                        Sort[i] = c;
-                        i++;
+                case 5 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Cobaltite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
                     }
                     break;
-
+                case 6 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Euxenite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 7 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Scheelite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 8 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Titanite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 9 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Chromite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 10 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Otavite", false)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 11 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Sperrylite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 12 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Vanadinite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 13 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Carnotite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 14 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Cinnabar", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 15 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Pollucite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 16 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Zircon", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 17 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Loparite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 18 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Monazite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 19 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Xenotime", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 20 + 20:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Ytterbite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 1 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Bitumens", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 2 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Coesite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 3 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Sylvite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 4 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Zeolites", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 5 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Cobaltite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 6 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Euxenite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 7 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Scheelite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 8 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Titanite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 9 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Chromite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 10 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Otavite", false)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 11 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Sperrylite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 12 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Vanadinite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 13 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Carnotite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 14 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Cinnabar", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 15 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Pollucite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 16 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Zircon", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 17 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Loparite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 18 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Monazite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 19 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Xenotime", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
+                case 20 + 40:
+                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                        if (sharedPref.getBoolean("Ytterbite", true)) {
+                            Sort[i] = c;
+                            i++;
+                        }
+                    }
+                    break;
             }
         }
 
