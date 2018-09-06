@@ -72,6 +72,12 @@
             android:launchMode="singleTop">
         </activity>
 
+        <activity
+            android:name=".systemSettings.MoonSystemSelection"
+            android:label="@string/SystemCtext"
+            android:launchMode="singleTop"
+            android:parentActivityName=".priceActivities.MoonPrices"></activity>
+
         <!-- Item selection -->
 
         <activity
@@ -103,6 +109,12 @@
             android:label="Select minerals"
             android:launchMode="singleTop"
             android:parentActivityName=".priceActivities.MineralPrices"></activity>
+
+        <activity
+            android:name=".selectionSettings.MoonSelection"
+            android:label="Select moon ores"
+            android:launchMode="singleTop"
+            android:parentActivityName=".priceActivities.MoonPrices"></activity>
 
         <!-- General activities -->
 

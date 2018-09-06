@@ -46,6 +46,12 @@
         />
 
     <item
+        android:id="@+id/action_moon"
+        android:icon="@mipmap/ic_settings"
+        android:title="Go to moon ores"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/action_about"
         android:title="@string/action_about"
         android:icon="@mipmap/ic_settings"

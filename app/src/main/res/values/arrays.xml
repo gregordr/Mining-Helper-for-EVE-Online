@@ -12,6 +12,12 @@
         <item>Price</item>
     </string-array>
 
+    <string-array name="sortOptionsMo">
+        <item>Default</item>
+        <item>Alphabetically</item>
+        <item>Price</item>
+    </string-array>
+
     <string-array name="BS">
         <item>Compressed Sell</item>
         <item>Compressed Buy</item>
@@ -248,6 +254,73 @@
         <item>39</item>
         <item>40</item>
         <item>11399</item>
+    </string-array>
+
+    <string-array name="NamesMo">
+        <item>Not a valid value</item>
+
+        <item>Bitumens</item>
+        <item>Coesite</item>
+        <item>Sylvite</item>
+        <item>Zeolites</item>
+        <item>Cobaltite</item>
+        <item>Euxenite</item>
+        <item>Scheelite</item>
+        <item>Titanite</item>
+        <item>Chromite</item>
+        <item>Otavite</item>
+        <item>Sperrylite</item>
+        <item>Vanadinite</item>
+        <item>Carnotite</item>
+        <item>Cinnabar</item>
+        <item>Pollucite</item>
+        <item>Zircon</item>
+        <item>Loparite</item>
+        <item>Monazite</item>
+        <item>Xenotime</item>
+        <item>Ytterbite</item>
+
+        <item>Brimful Bitumens</item>
+        <item>Brimful Coesite</item>
+        <item>Brimful Sylvite</item>
+        <item>Brimful Zeolites</item>
+        <item>Copious Cobaltite</item>
+        <item>Copious Euxenite</item>
+        <item>Copious Scheelite</item>
+        <item>Copious Titanite</item>
+        <item>Lavish Chromite</item>
+        <item>Lavish Otavite</item>
+        <item>Lavish Sperrylite</item>
+        <item>Lavish Vanadinite</item>
+        <item>Replete Carnotite</item>
+        <item>Replete Cinnabar</item>
+        <item>Replete Pollucite</item>
+        <item>Replete Zircon</item>
+        <item>Bountiful Loparite</item>
+        <item>Bountiful Monazite</item>
+        <item>Bountiful Xenotime</item>
+        <item>Bountiful Ytterbite</item>
+
+        <item>Glistening Bitumens</item>
+        <item>Glistening Coesite</item>
+        <item>Glistening Sylvite</item>
+        <item>Glistening Zeolites</item>
+        <item>Twinkling Cobaltite</item>
+        <item>Twinkling Euxenite</item>
+        <item>Twinkling Scheelite</item>
+        <item>Twinkling Titanite</item>
+        <item>Shimmering Chromite</item>
+        <item>Shimmering Otavite</item>
+        <item>Shimmering Sperrylite</item>
+        <item>Shimmering Vanadinite</item>
+        <item>Glowing Carnotite</item>
+        <item>Glowing Cinnabar</item>
+        <item>Glowing Pollucite</item>
+        <item>Glowing Zircon</item>
+        <item>Shining Loparite</item>
+        <item>Shining Monazite</item>
+        <item>Shining Xenotime</item>
+        <item>Shining Ytterbite</item>
     </string-array>
 
 </resources>
