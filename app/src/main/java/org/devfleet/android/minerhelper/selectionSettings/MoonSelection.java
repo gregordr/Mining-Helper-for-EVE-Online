@@ -1,604 +1,347 @@
 package org.devfleet.android.minerhelper.selectionSettings;
 
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 
 import org.devfleet.android.minerhelper.R;
 
-import static android.support.v4.view.ViewCompat.jumpDrawablesToCurrentState;
 
 public class MoonSelection extends AppCompatActivity {
 
     private SharedPreferences sharedPref;
 
-    private CheckBox Variants;
-    private CheckBox Mercoxit;
-    private CheckBox Arkonor;
-    private CheckBox Bistot;
-    private CheckBox Crokite;
-    private CheckBox Dark_Ochre;
-    private CheckBox Gneiss;
-    private CheckBox Hedbergite;
-    private CheckBox Hemorphite;
-    private CheckBox Jaspet;
-    private CheckBox Kernite;
-    private CheckBox Omber;
-    private CheckBox Plagioclase;
-    private CheckBox Pyroxeres;
-    private CheckBox Scordite;
-    private CheckBox Spodumain;
-    private CheckBox Veldspar;
+    private CheckBox VariantsMoon;
+    private CheckBox Bitumens;
+    private CheckBox Coesite;
+    private CheckBox Sylvite;
+    private CheckBox Zeolites;
+    private CheckBox Cobaltite;
+    private CheckBox Euxenite;
+    private CheckBox Scheelite;
+    private CheckBox Titanite;
+    private CheckBox Chromite;
+    private CheckBox Otavite;
+    private CheckBox Sperrylite;
+    private CheckBox Vanadinite;
+    private CheckBox Carnotite;
+    private CheckBox Cinnabar;
+    private CheckBox Pollucite;
+    private CheckBox Zircon;
+    private CheckBox Loparite;
+    private CheckBox Monazite;
+    private CheckBox Xenotime;
+    private CheckBox Ytterbite;
 
     private View v;
 
-    private Button Amarr;
-    private Button Caldari;
-    private Button Minmatar;
-    private Button All;
-    private Button Gallente;
-
-    private CheckBox s10;
-    private CheckBox s09;
-    private CheckBox s07;
-    private CheckBox s04;
-    private CheckBox s02;
-    private CheckBox s00;
+    private CheckBox Base;
+    private CheckBox R8;
+    private CheckBox R16;
+    private CheckBox R32;
+    private CheckBox R64;
 
     private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ore_c);
+        setContentView(R.layout.activity_ore_cmoon);
         getViews();
         sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         loadViews();
     }
 
     private void getViews() {
-        Variants = findViewById(R.id.Variants);
-        Mercoxit = findViewById(R.id.Mercoxit);
-        Arkonor = findViewById(R.id.Arkonor);
-        Bistot = findViewById(R.id.Bistot);
-        Crokite = findViewById(R.id.Crokite);
-        Dark_Ochre = findViewById(R.id.Dark_Ochre);
-        Gneiss = findViewById(R.id.Gneiss);
-        Hedbergite = findViewById(R.id.Hedbergite);
-        Hemorphite = findViewById(R.id.Hemorphite);
-        Jaspet = findViewById(R.id.Jaspet);
-        Kernite = findViewById(R.id.Kernite);
-        Omber = findViewById(R.id.Omber);
-        Plagioclase = findViewById(R.id.Plagioclase);
-        Pyroxeres = findViewById(R.id.Pyroxeres);
-        Scordite = findViewById(R.id.Scordite);
-        Spodumain = findViewById(R.id.Spodumain);
-        Veldspar = findViewById(R.id.Veldspar);
+        VariantsMoon = findViewById(R.id.VariantsMoon);
+        Bitumens = findViewById(R.id.Bitumens);
+        Coesite = findViewById(R.id.Coesite);
+        Sylvite = findViewById(R.id.Sylvite);
+        Zeolites = findViewById(R.id.Zeolites);
+        Cobaltite = findViewById(R.id.Cobaltite);
+        Euxenite = findViewById(R.id.Euxenite);
+        Scheelite = findViewById(R.id.Scheelite);
+        Titanite = findViewById(R.id.Titanite);
+        Chromite = findViewById(R.id.Chromite);
+        Otavite = findViewById(R.id.Otavite);
+        Sperrylite = findViewById(R.id.Sperrylite);
+        Vanadinite = findViewById(R.id.Vanadinite);
+        Carnotite = findViewById(R.id.Carnotite);
+        Cinnabar = findViewById(R.id.Cinnabar);
+        Pollucite = findViewById(R.id.Pollucite);
+        Zircon = findViewById(R.id.Zircon);
+        Loparite = findViewById(R.id.Loparite);
+        Monazite = findViewById(R.id.Monazite);
+        Xenotime = findViewById(R.id.Xenotime);
+        Ytterbite = findViewById(R.id.Ytterbite);
     }
 
     private void loadViews() {
-        Variants.setChecked(sharedPref.getBoolean("Variants", false));
-        Mercoxit.setChecked(sharedPref.getBoolean("Mercoxit", false));
-        Arkonor.setChecked(sharedPref.getBoolean("Arkonor", true));
-        Bistot.setChecked(sharedPref.getBoolean("Bistot", true));
-        Crokite.setChecked(sharedPref.getBoolean("Crokite", true));
-        Dark_Ochre.setChecked(sharedPref.getBoolean("Dark_Ochre", true));
-        Gneiss.setChecked(sharedPref.getBoolean("Gneiss", true));
-        Hedbergite.setChecked(sharedPref.getBoolean("Hedbergite", true));
-        Hemorphite.setChecked(sharedPref.getBoolean("Hemorphite", true));
-        Jaspet.setChecked(sharedPref.getBoolean("Jaspet", true));
-        Kernite.setChecked(sharedPref.getBoolean("Kernite", true));
-        Omber.setChecked(sharedPref.getBoolean("Omber", true));
-        Plagioclase.setChecked(sharedPref.getBoolean("Plagioclase", true));
-        Pyroxeres.setChecked(sharedPref.getBoolean("Pyroxeres", true));
-        Scordite.setChecked(sharedPref.getBoolean("Scordite", true));
-        Spodumain.setChecked(sharedPref.getBoolean("Spodumain", true));
-        Veldspar.setChecked(sharedPref.getBoolean("Veldspar", true));
-    }
-
-    private void findButtons() {
-        Amarr = v.findViewById(R.id.toggleButtonA);
-        Caldari = v.findViewById(R.id.toggleButtonC);
-        Gallente = v.findViewById(R.id.toggleButtonG);
-        Minmatar = v.findViewById(R.id.toggleButtonM);
-        All = v.findViewById(R.id.toggleButtonAll);
-
-        s10 = v.findViewById(R.id.s1_0);
-        s09 = v.findViewById(R.id.s0_9);
-        s07 = v.findViewById(R.id.s0_7);
-        s04 = v.findViewById(R.id.s0_3);
-        s02 = v.findViewById(R.id.s0_1);
-        s00 = v.findViewById(R.id.s0_0);
+        VariantsMoon.setChecked(sharedPref.getBoolean("VariantsMoon", false));
+        Bitumens.setChecked(sharedPref.getBoolean("Bitumens", true));
+        Coesite.setChecked(sharedPref.getBoolean("Coesite", true));
+        Sylvite.setChecked(sharedPref.getBoolean("Sylvite", true));
+        Zeolites.setChecked(sharedPref.getBoolean("Zeolites", true));
+        Cobaltite.setChecked(sharedPref.getBoolean("Cobaltite", true));
+        Euxenite.setChecked(sharedPref.getBoolean("Euxenite", true));
+        Scheelite.setChecked(sharedPref.getBoolean("Scheelite", true));
+        Titanite.setChecked(sharedPref.getBoolean("Titanite", true));
+        Chromite.setChecked(sharedPref.getBoolean("Chromite", true));
+        Otavite.setChecked(sharedPref.getBoolean("Otavite", true));
+        Sperrylite.setChecked(sharedPref.getBoolean("Sperrylite", true));
+        Vanadinite.setChecked(sharedPref.getBoolean("Vanadinite", true));
+        Carnotite.setChecked(sharedPref.getBoolean("Carnotite", true));
+        Cinnabar.setChecked(sharedPref.getBoolean("Cinnabar", true));
+        Pollucite.setChecked(sharedPref.getBoolean("Pollucite", true));
+        Zircon.setChecked(sharedPref.getBoolean("Zircon", true));
+        Loparite.setChecked(sharedPref.getBoolean("Loparite", true));
+        Monazite.setChecked(sharedPref.getBoolean("Monazite", true));
+        Xenotime.setChecked(sharedPref.getBoolean("Xenotime", true));
+        Ytterbite.setChecked(sharedPref.getBoolean("Ytterbite", true));
     }
 
     public void openSelection(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MoonSelection.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        v = inflater.inflate(R.layout.orebysystem, null);
+        v = inflater.inflate(R.layout.orebysystemmoon, null);
         builder.setView(v);
         dialog = builder.create();
         dialog.show();
         findButtons();
-        paintOne();
         checkCheckBox();
     }
 
-    public void selectEmpire(View view) {
-
-        ViewCompat.setBackgroundTintList(Amarr, ColorStateList.valueOf(0xFFD6D7D7));
-        ViewCompat.setBackgroundTintList(Caldari, ColorStateList.valueOf(0xFFD6D7D7));
-        ViewCompat.setBackgroundTintList(Gallente, ColorStateList.valueOf(0xFFD6D7D7));
-        ViewCompat.setBackgroundTintList(Minmatar, ColorStateList.valueOf(0xFFD6D7D7));
-        ViewCompat.setBackgroundTintList(All, ColorStateList.valueOf(0xFFD6D7D7));
-        ViewCompat.setBackgroundTintList(view, ColorStateList.valueOf(0xaaaaaaaa));
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("Button", whatButton(view));
-        editor.commit();
-    }
-
-    private String whatButton(View view) {
-        if (view == Amarr) {
-            return "A";
-        }
-        if (view == Caldari) {
-            return "C";
-        }
-        if (view == Gallente) {
-            return "G";
-        }
-        if (view == Minmatar) {
-            return "M";
-        }
-        return "All";
-    }
-
-    private void paintOne() {
-        String View = sharedPref.getString("Button", "All");
-        switch (View) {
-            case "A":
-                ViewCompat.setBackgroundTintList(Amarr, ColorStateList.valueOf(0xaaaaaaaa));
-                break;
-            case "C":
-                ViewCompat.setBackgroundTintList(Caldari, ColorStateList.valueOf(0xaaaaaaaa));
-                break;
-            case "G":
-                ViewCompat.setBackgroundTintList(Gallente, ColorStateList.valueOf(0xaaaaaaaa));
-                break;
-            case "M":
-                ViewCompat.setBackgroundTintList(Minmatar, ColorStateList.valueOf(0xaaaaaaaa));
-                break;
-            case "All":
-                ViewCompat.setBackgroundTintList(All, ColorStateList.valueOf(0xaaaaaaaa));
-                break;
-        }
+    private void findButtons() {
+        Base = v.findViewById(R.id.Base);
+        R8 = v.findViewById(R.id.R8);
+        R16 = v.findViewById(R.id.R16);
+        R32 = v.findViewById(R.id.R32);
+        R64 = v.findViewById(R.id.R64);
     }
 
     private void checkCheckBox() {
-        String box = sharedPref.getString("CB", "s00");
-        switch (box) {
-            case "s10":
-                s10.setChecked(true);
-                break;
-            case "s09":
-                s09.setChecked(true);
-                break;
-            case "s07":
-                s07.setChecked(true);
-                break;
-            case "s04":
-                s04.setChecked(true);
-                break;
-            case "s02":
-                s02.setChecked(true);
-                break;
-            case "s00":
-                s00.setChecked(true);
-                break;
-        }
+        Base.setChecked(sharedPref.getBoolean("MoonBase", true));
+        R8.setChecked(sharedPref.getBoolean("Moon8", true));
+        R16.setChecked(sharedPref.getBoolean("Moon16", true));
+        R32.setChecked(sharedPref.getBoolean("Moon32", true));
+        R64.setChecked(sharedPref.getBoolean("Moon64", true));
     }
 
     public void checkButton(View view) {
 
         SharedPreferences.Editor editor = sharedPref.edit();
-        if ((s10 == view)) {
-            editor.putString("CB", "s10");
+        if ((Base == view)) {
+            editor.putBoolean("MoonBase", Base.isChecked());
         }
-        if ((s09 == view)) {
-            editor.putString("CB", "s09");
+        if ((R8 == view)) {
+            editor.putBoolean("Moon8", R8.isChecked());
         }
-        if ((s07 == view)) {
-            editor.putString("CB", "s07");
+        if ((R16 == view)) {
+            editor.putBoolean("Moon16", R16.isChecked());
         }
-        if ((s04 == view)) {
-            editor.putString("CB", "s04");
+        if ((R32 == view)) {
+            editor.putBoolean("Moon32", R32.isChecked());
         }
-        if ((s02 == view)) {
-            editor.putString("CB", "s02");
-        }
-        if ((s00 == view)) {
-            editor.putString("CB", "s00");
+        if ((R64 == view)) {
+            editor.putBoolean("Moon64", R64.isChecked());
         }
         editor.commit();
-
-        s10.setChecked(false);
-        s09.setChecked(false);
-        s07.setChecked(false);
-        s04.setChecked(false);
-        s02.setChecked(false);
-        s00.setChecked(false);
-
-        if (!(s10 == view)) {
-            jumpDrawablesToCurrentState(s10);
-        }
-        if (!(s09 == view)) {
-            jumpDrawablesToCurrentState(s09);
-        }
-        if (!(s07 == view)) {
-            jumpDrawablesToCurrentState(s07);
-        }
-        if (!(s04 == view)) {
-            jumpDrawablesToCurrentState(s04);
-        }
-        if (!(s02 == view)) {
-            jumpDrawablesToCurrentState(s02);
-        }
-        if (!(s00 == view)) {
-            jumpDrawablesToCurrentState(s00);
-        }
-
-        ((CheckBox) view).setChecked(true);
-
     }
 
     public void apply(View view) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Arkonor", false);
-        editor.putBoolean("Bistot", false);
-        editor.putBoolean("Crokite", false);
-        editor.putBoolean("Dark_Ochre", false);
-        editor.putBoolean("Gneiss", false);
-        editor.putBoolean("Hedbergite", false);
-        editor.putBoolean("Hemorphite", false);
-        editor.putBoolean("Jaspet", false);
-        editor.putBoolean("Kernite", false);
-        editor.putBoolean("Omber", false);
-        editor.putBoolean("Plagioclase", false);
-        editor.putBoolean("Pyroxeres", false);
-        editor.putBoolean("Scordite", false);
-        editor.putBoolean("Spodumain", false);
-        editor.putBoolean("Veldspar", false);
-        switch (sharedPref.getString("CB", "s00")) {
-            case "s10":
-                editor.putBoolean("Veldspar", true);
-                editor.putBoolean("Scordite", true);
-                break;
-            case "s09":
-                switch (sharedPref.getString("Button", "All")) {
-                    case "A":
-                    case "C":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        break;
-                    case "M":
-                    case "G":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        break;
-                    case "All":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        break;
-                }
-                break;
-            case "s07":
-                switch (sharedPref.getString("Button", "All")) {
-                    case "A":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Kernite", true);
-                        break;
-                    case "C":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        break;
-                    case "M":
-                    case "G":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        break;
-                    case "All":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        break;
-                }
-                break;
-            case "s04":
-                switch (sharedPref.getString("Button", "All")) {
-                    case "A":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        break;
-                    case "C":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Kernite", true);
-                        break;
-                    case "M":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Jaspet", true);
-                        break;
-                    case "G":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        break;
-                    case "All":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        break;
-                }
-                break;
-            case "s02":
-                switch (sharedPref.getString("Button", "All")) {
-                    case "A":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        break;
-                    case "C":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        break;
-                    case "M":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        break;
-                    case "G":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        break;
-                    case "All":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        break;
-                }
-                break;
-            case "s00":
-                switch (sharedPref.getString("Button", "All")) {
-                    case "A":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        editor.putBoolean("Spodumain", true);
-                        editor.putBoolean("Gneiss", true);
-                        editor.putBoolean("Crokite", true);
-                        editor.putBoolean("Arkonor", true);
-                        editor.putBoolean("Bistot", true);
-                        break;
-                    case "C":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        editor.putBoolean("Dark_Ochre", true);
-                        editor.putBoolean("Crokite", true);
-                        editor.putBoolean("Spodumain", true);
-                        editor.putBoolean("Bistot", true);
-                        break;
-                    case "M":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        editor.putBoolean("Dark_Ochre", true);
-                        editor.putBoolean("Crokite", true);
-                        editor.putBoolean("Arkonor", true);
-                        editor.putBoolean("Bistot", true);
-                        break;
-                    case "G":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        editor.putBoolean("Spodumain", true);
-                        editor.putBoolean("Gneiss", true);
-                        editor.putBoolean("Arkonor", true);
-                        editor.putBoolean("Bistot", true);
-                        break;
-                    case "All":
-                        editor.putBoolean("Veldspar", true);
-                        editor.putBoolean("Scordite", true);
-                        editor.putBoolean("Pyroxeres", true);
-                        editor.putBoolean("Plagioclase", true);
-                        editor.putBoolean("Omber", true);
-                        editor.putBoolean("Kernite", true);
-                        editor.putBoolean("Jaspet", true);
-                        editor.putBoolean("Hemorphite", true);
-                        editor.putBoolean("Hedbergite", true);
-                        editor.putBoolean("Gneiss", true);
-                        editor.putBoolean("Dark_Ochre", true);
-                        editor.putBoolean("Crokite", true);
-                        editor.putBoolean("Arkonor", true);
-                        editor.putBoolean("Bistot", true);
-                        editor.putBoolean("Spodumain", true);
-                        break;
-                }
-                break;
+
+        editor.putBoolean("Bitumens", false);
+        editor.putBoolean("Coesite", false);
+        editor.putBoolean("Sylvite", false);
+        editor.putBoolean("Zeolites", false);
+        editor.putBoolean("Cobaltite", false);
+        editor.putBoolean("Euxenite", false);
+        editor.putBoolean("Scheelite", false);
+        editor.putBoolean("Titanite", false);
+        editor.putBoolean("Chromite", false);
+        editor.putBoolean("Otavite", false);
+        editor.putBoolean("Sperrylite", false);
+        editor.putBoolean("Vanadinite", false);
+        editor.putBoolean("Carnotite", false);
+        editor.putBoolean("Cinnabar", false);
+        editor.putBoolean("Pollucite", false);
+        editor.putBoolean("Zircon", false);
+        editor.putBoolean("Loparite", false);
+        editor.putBoolean("Monazite", false);
+        editor.putBoolean("Xenotime", false);
+        editor.putBoolean("Ytterbite", false);
+
+        if (sharedPref.getBoolean("MoonBase", true)) {
+            editor.putBoolean("Bitumens", true);
+            editor.putBoolean("Coesite", true);
+            editor.putBoolean("Sylvite", true);
+            editor.putBoolean("Zeolites", true);
         }
+
+        if (sharedPref.getBoolean("Moon8", true)) {
+            editor.putBoolean("Cobaltite", true);
+            editor.putBoolean("Euxenite", true);
+            editor.putBoolean("Scheelite", true);
+            editor.putBoolean("Titanite", true);
+        }
+
+        if (sharedPref.getBoolean("Moon16", true)) {
+            editor.putBoolean("Chromite", true);
+            editor.putBoolean("Otavite", true);
+            editor.putBoolean("Sperrylite", true);
+            editor.putBoolean("Vanadinite", true);
+        }
+
+        if (sharedPref.getBoolean("Moon32", true)) {
+            editor.putBoolean("Carnotite", true);
+            editor.putBoolean("Cinnabar", true);
+            editor.putBoolean("Pollucite", true);
+            editor.putBoolean("Zircon", true);
+        }
+
+        if (sharedPref.getBoolean("Moon64", true)) {
+            editor.putBoolean("Loparite", true);
+            editor.putBoolean("Monazite", true);
+            editor.putBoolean("Xenotime", true);
+            editor.putBoolean("Ytterbite", true);
+        }
+
+
         editor.commit();
         dialog.cancel();
         loadViews();
     }
 
-
-    public void setArkonor(View mArkonor) {
+    public void setVariantsMoon(View mVariantsMoon) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Arkonor", Arkonor.isChecked());
+        editor.putBoolean("VariantsMoon", VariantsMoon.isChecked());
         editor.commit();
     }
 
-    public void setBistot(View mBistot) {
+    public void setBitumens(View mBitumens) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Bistot", Bistot.isChecked());
+        editor.putBoolean("Bitumens", Bitumens.isChecked());
         editor.commit();
     }
 
-    public void setCrokite(View mCrokite) {
+    public void setCoesite(View mCoesite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Crokite", Crokite.isChecked());
+        editor.putBoolean("Coesite", Coesite.isChecked());
         editor.commit();
     }
 
-    public void setDark_Ochre(View mDark_Ochre) {
+    public void setSylvite(View mSylvite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Dark_Ochre", Dark_Ochre.isChecked());
+        editor.putBoolean("Sylvite", Sylvite.isChecked());
         editor.commit();
     }
 
-    public void setGneiss(View mGneiss) {
+    public void setZeolites(View mZeolites) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Gneiss", Gneiss.isChecked());
+        editor.putBoolean("Zeolites", Zeolites.isChecked());
         editor.commit();
     }
 
-    public void setHedbergite(View mHedbergite) {
+    public void setCobaltite(View mCobaltite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Hedbergite", Hedbergite.isChecked());
+        editor.putBoolean("Cobaltite", Cobaltite.isChecked());
         editor.commit();
     }
 
-    public void setHemorphite(View mHemorphite) {
+    public void setEuxenite(View mEuxenite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Hemorphite", Hemorphite.isChecked());
+        editor.putBoolean("Euxenite", Euxenite.isChecked());
         editor.commit();
     }
 
-    public void setJaspet(View mJaspet) {
+    public void setScheelite(View mScheelite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Jaspet", Jaspet.isChecked());
+        editor.putBoolean("Scheelite", Scheelite.isChecked());
         editor.commit();
     }
 
-    public void setKernite(View mKernite) {
+    public void setTitanite(View mTitanite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Kernite", Kernite.isChecked());
+        editor.putBoolean("Titanite", Titanite.isChecked());
         editor.commit();
     }
 
-    public void setMercoxit(View mMercoxit) {
+    public void setChromite(View mChromite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Mercoxit", Mercoxit.isChecked());
+        editor.putBoolean("Chromite", Chromite.isChecked());
         editor.commit();
     }
 
-    public void setOmber(View mOmber) {
+    public void setOtavite(View mOtavite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Omber", Omber.isChecked());
+        editor.putBoolean("Otavite", Otavite.isChecked());
         editor.commit();
     }
 
-    public void setPlagioclase(View mPlagioclase) {
+    public void setSperrylite(View mSperrylite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Plagioclase", Plagioclase.isChecked());
+        editor.putBoolean("Sperrylite", Sperrylite.isChecked());
         editor.commit();
     }
 
-    public void setPyroxeres(View mPyroxeres) {
+    public void setVanadinite(View mVanadinite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Pyroxeres", Pyroxeres.isChecked());
+        editor.putBoolean("Vanadinite", Vanadinite.isChecked());
         editor.commit();
     }
 
-    public void setScordite(View mScordite) {
+    public void setCarnotite(View mCarnotite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Scordite", Scordite.isChecked());
+        editor.putBoolean("Carnotite", Carnotite.isChecked());
         editor.commit();
     }
 
-    public void setSpodumain(View mSpodumain) {
+    public void setCinnabar(View mCinnabar) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Spodumain", Spodumain.isChecked());
+        editor.putBoolean("Cinnabar", Cinnabar.isChecked());
         editor.commit();
     }
 
-    public void setVariants(View mVariants) {
+    public void setPollucite(View mPollucite) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Variants", Variants.isChecked());
+        editor.putBoolean("Pollucite", Pollucite.isChecked());
         editor.commit();
     }
 
-    public void setVeldspar(View mVeldspar) {
+    public void setZircon(View mZircon) {
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean("Veldspar", Veldspar.isChecked());
+        editor.putBoolean("Zircon", Zircon.isChecked());
         editor.commit();
     }
 
+    public void setLoparite(View mLoparite) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("Loparite", Loparite.isChecked());
+        editor.commit();
+    }
+
+    public void setMonazite(View mMonazite) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("Monazite", Monazite.isChecked());
+        editor.commit();
+    }
+
+    public void setXenotime(View mXenotime) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("Xenotime", Xenotime.isChecked());
+        editor.commit();
+    }
+
+    public void setYtterbite(View mYtterbite) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("Ytterbite", Ytterbite.isChecked());
+        editor.commit();
+    }
 
 }

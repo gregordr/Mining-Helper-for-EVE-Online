@@ -625,7 +625,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 1 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Bitumens", true)) {
                             Sort[i] = c;
                             i++;
@@ -633,7 +633,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 2 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Coesite", true)) {
                             Sort[i] = c;
                             i++;
@@ -641,7 +641,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 3 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Sylvite", true)) {
                             Sort[i] = c;
                             i++;
@@ -649,7 +649,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 4 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Zeolites", true)) {
                             Sort[i] = c;
                             i++;
@@ -657,7 +657,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 5 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Cobaltite", true)) {
                             Sort[i] = c;
                             i++;
@@ -665,7 +665,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 6 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Euxenite", true)) {
                             Sort[i] = c;
                             i++;
@@ -673,7 +673,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 7 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Scheelite", true)) {
                             Sort[i] = c;
                             i++;
@@ -681,7 +681,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 8 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Titanite", true)) {
                             Sort[i] = c;
                             i++;
@@ -689,7 +689,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 9 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Chromite", true)) {
                             Sort[i] = c;
                             i++;
@@ -697,7 +697,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 10 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Otavite", false)) {
                             Sort[i] = c;
                             i++;
@@ -705,7 +705,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 11 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Sperrylite", true)) {
                             Sort[i] = c;
                             i++;
@@ -713,7 +713,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 12 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Vanadinite", true)) {
                             Sort[i] = c;
                             i++;
@@ -721,7 +721,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 13 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Carnotite", true)) {
                             Sort[i] = c;
                             i++;
@@ -729,7 +729,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 14 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Cinnabar", true)) {
                             Sort[i] = c;
                             i++;
@@ -737,7 +737,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 15 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Pollucite", true)) {
                             Sort[i] = c;
                             i++;
@@ -745,7 +745,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 16 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Zircon", true)) {
                             Sort[i] = c;
                             i++;
@@ -753,7 +753,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 17 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Loparite", true)) {
                             Sort[i] = c;
                             i++;
@@ -761,7 +761,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 18 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Monazite", true)) {
                             Sort[i] = c;
                             i++;
@@ -769,7 +769,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 19 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Xenotime", true)) {
                             Sort[i] = c;
                             i++;
@@ -777,7 +777,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 20 + 20:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Ytterbite", true)) {
                             Sort[i] = c;
                             i++;
@@ -785,7 +785,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 1 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Bitumens", true)) {
                             Sort[i] = c;
                             i++;
@@ -793,7 +793,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 2 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Coesite", true)) {
                             Sort[i] = c;
                             i++;
@@ -801,7 +801,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 3 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Sylvite", true)) {
                             Sort[i] = c;
                             i++;
@@ -809,7 +809,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 4 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Zeolites", true)) {
                             Sort[i] = c;
                             i++;
@@ -817,7 +817,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 5 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Cobaltite", true)) {
                             Sort[i] = c;
                             i++;
@@ -825,7 +825,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 6 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Euxenite", true)) {
                             Sort[i] = c;
                             i++;
@@ -833,7 +833,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 7 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Scheelite", true)) {
                             Sort[i] = c;
                             i++;
@@ -841,7 +841,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 8 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Titanite", true)) {
                             Sort[i] = c;
                             i++;
@@ -849,7 +849,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 9 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Chromite", true)) {
                             Sort[i] = c;
                             i++;
@@ -857,7 +857,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 10 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Otavite", false)) {
                             Sort[i] = c;
                             i++;
@@ -865,7 +865,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 11 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Sperrylite", true)) {
                             Sort[i] = c;
                             i++;
@@ -873,7 +873,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 12 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Vanadinite", true)) {
                             Sort[i] = c;
                             i++;
@@ -881,7 +881,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 13 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Carnotite", true)) {
                             Sort[i] = c;
                             i++;
@@ -889,7 +889,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 14 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Cinnabar", true)) {
                             Sort[i] = c;
                             i++;
@@ -897,7 +897,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 15 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Pollucite", true)) {
                             Sort[i] = c;
                             i++;
@@ -905,7 +905,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 16 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Zircon", true)) {
                             Sort[i] = c;
                             i++;
@@ -913,7 +913,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 17 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Loparite", true)) {
                             Sort[i] = c;
                             i++;
@@ -921,7 +921,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 18 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Monazite", true)) {
                             Sort[i] = c;
                             i++;
@@ -929,7 +929,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 19 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Xenotime", true)) {
                             Sort[i] = c;
                             i++;
@@ -937,7 +937,7 @@ public class MoonPrices extends BasePrices {
                     }
                     break;
                 case 20 + 40:
-                    if (sharedPref.getBoolean("VariantsMo", false)) {
+                    if (sharedPref.getBoolean("VariantsMoon", false)) {
                         if (sharedPref.getBoolean("Ytterbite", true)) {
                             Sort[i] = c;
                             i++;
@@ -949,12 +949,12 @@ public class MoonPrices extends BasePrices {
 
         switch (sharedPref.getString("SortMo", "Default")) {
             case "Name":
-                String NamesMi[] = getResources().getStringArray(R.array.NamesMi);
+                String NamesMo[] = getResources().getStringArray(R.array.NamesMo);
                 boolean tT = true;
                 while (tT) {
                     tT = false;
                     for (int k = 1; k < i - 1; k++) {
-                        if (NamesMi[Sort[k]].compareTo(NamesMi[Sort[k + 1]]) < 1) {
+                        if (NamesMo[Sort[k]].compareTo(NamesMo[Sort[k + 1]]) < 1) {
                             int r = Sort[k];
                             Sort[k] = Sort[k + 1];
                             Sort[k + 1] = r;
@@ -1113,7 +1113,7 @@ public class MoonPrices extends BasePrices {
             if (sharedPref.getBoolean("Ytterbite", true)) {
                 i++;
             }
-            if (sharedPref.getBoolean("VariantsMo", false)) {
+            if (sharedPref.getBoolean("VariantsMoon", false)) {
                 i *= 3;
             }
 
