@@ -83,13 +83,13 @@ public class IcePrices extends BasePrices {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i <= nums.length; i++) {
+        for (int i = 1; !(i > nums.length); i++) {
             try {
                 editor.putFloat("Uncompressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i <= nums.length; i++) {
+        for (int i = 1; !(i > nums.length); i++) {
             try {
                 editor.putFloat("Uncompressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -97,7 +97,7 @@ public class IcePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i <= nums.length; i++) {
+        for (int i = 1; !(i > nums.length); i++) {
             try {
                 editor.putFloat("Compressed SellI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
@@ -105,7 +105,7 @@ public class IcePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i <= nums.length; i++) {
+        for (int i = 1; !(i > nums.length); i++) {
             try {
                 editor.putFloat("Compressed BuyI" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+12-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {

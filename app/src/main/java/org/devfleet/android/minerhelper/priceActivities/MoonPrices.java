@@ -26,7 +26,7 @@ import java.util.Calendar;
 
 public class MoonPrices extends BasePrices {
 
-    private final int[] Sort = new int[26];
+    private final int[] Sort = new int[61];
     private GreenAdapter mAdapter;
 
     @Override
@@ -268,205 +268,205 @@ public class MoonPrices extends BasePrices {
         editor.putFloat("Compressed BuyMo" + 19, 0.01f * (b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22));
         editor.putFloat("Compressed BuyMo" + 20, 0.01f * (b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22));
 
-        editor.putFloat("Uncompressed SellMo" + 20 + 1, 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 2, 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 3, 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 4, 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 1), 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 2), 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 3), 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 4), 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 1.15f));
 
-        editor.putFloat("Uncompressed SellMo" + 20 + 5, 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 6, 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 7, 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 8, 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 5), 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 6), 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 7), 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 8), 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 1.15f));
 
-        editor.putFloat("Uncompressed SellMo" + 20 + 9, 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 10, 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 11, 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 12, 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 9), 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 10), 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 11), 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 12), 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 1.15f));
 
-        editor.putFloat("Uncompressed SellMo" + 20 + 13, 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 14, 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 15, 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 16, 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 13), 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 14), 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 15), 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 16), 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 1.15f));
 
-        editor.putFloat("Uncompressed SellMo" + 20 + 17, 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 18, 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 19, 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 1.15f));
-        editor.putFloat("Uncompressed SellMo" + 20 + 20, 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 17), 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 18), 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 19), 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 1.15f));
+        editor.putFloat("Uncompressed SellMo" + (20 + 20), 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 1.15f));
 
-        editor.putFloat("Uncompressed BuyMo" + 20 + 1, 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 2, 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 3, 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 4, 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 1), 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 2), 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 3), 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 4), 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 1.15f));
 
-        editor.putFloat("Uncompressed BuyMo" + 20 + 5, 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 6, 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 7, 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 8, 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 5), 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 6), 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 7), 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 8), 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 1.15f));
 
-        editor.putFloat("Uncompressed BuyMo" + 20 + 9, 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 10, 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 11, 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 12, 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 9), 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 10), 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 11), 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 12), 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 1.15f));
 
-        editor.putFloat("Uncompressed BuyMo" + 20 + 13, 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 14, 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 15, 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 16, 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 13), 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 14), 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 15), 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 16), 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 1.15f));
 
-        editor.putFloat("Uncompressed BuyMo" + 20 + 17, 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 18, 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 19, 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 1.15f));
-        editor.putFloat("Uncompressed BuyMo" + 20 + 20, 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 17), 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 18), 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 19), 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 1.15f));
+        editor.putFloat("Uncompressed BuyMo" + (20 + 20), 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 1.15f));
 
-        editor.putFloat("Compressed SellMo" + 20 + 1, 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 2, 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 3, 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 4, 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 1), 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 2), 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 3), 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 4), 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 1.15f));
 
-        editor.putFloat("Compressed SellMo" + 20 + 5, 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 6, 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 7, 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 8, 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 5), 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 6), 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 7), 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 8), 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 1.15f));
 
-        editor.putFloat("Compressed SellMo" + 20 + 9, 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 10, 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 11, 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 12, 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 9), 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 10), 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 11), 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 12), 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 1.15f));
 
-        editor.putFloat("Compressed SellMo" + 20 + 13, 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 14, 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 15, 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 16, 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 13), 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 14), 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 15), 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 16), 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 1.15f));
 
-        editor.putFloat("Compressed SellMo" + 20 + 17, 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 18, 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 19, 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 1.15f));
-        editor.putFloat("Compressed SellMo" + 20 + 20, 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 17), 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 18), 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 19), 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 1.15f));
+        editor.putFloat("Compressed SellMo" + (20 + 20), 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 1.15f));
 
-        editor.putFloat("Compressed BuyMo" + 20 + 1, 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 2, 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 3, 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 4, 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 1), 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 2), 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 3), 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 4), 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 1.15f));
 
-        editor.putFloat("Compressed BuyMo" + 20 + 5, 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 6, 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 7, 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 8, 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 5), 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 6), 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 7), 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 8), 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 1.15f));
 
-        editor.putFloat("Compressed BuyMo" + 20 + 9, 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 10, 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 11, 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 12, 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 9), 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 10), 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 11), 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 12), 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 1.15f));
 
-        editor.putFloat("Compressed BuyMo" + 20 + 13, 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 14, 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 15, 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 16, 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 13), 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 14), 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 15), 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 16), 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 1.15f));
 
-        editor.putFloat("Compressed BuyMo" + 20 + 17, 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 18, 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 19, 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 1.15f));
-        editor.putFloat("Compressed BuyMo" + 20 + 20, 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 17), 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 18), 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 19), 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 1.15f));
+        editor.putFloat("Compressed BuyMo" + (20 + 20), 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 1.15f));
 
-        editor.putFloat("Uncompressed SellMo" + 40 + 1, 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 2, 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 3, 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 4, 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 1), 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 2), 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 3), 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 4), 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 2));
 
-        editor.putFloat("Uncompressed SellMo" + 40 + 5, 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 6, 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 7, 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 8, 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 5), 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 6), 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 7), 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 8), 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 2));
 
-        editor.putFloat("Uncompressed SellMo" + 40 + 9, 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 10, 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 11, 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 12, 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 9), 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 10), 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 11), 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 12), 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 2));
 
-        editor.putFloat("Uncompressed SellMo" + 40 + 13, 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 14, 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 15, 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 16, 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 13), 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 14), 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 15), 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 16), 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 2));
 
-        editor.putFloat("Uncompressed SellMo" + 40 + 17, 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 18, 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 19, 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 2));
-        editor.putFloat("Uncompressed SellMo" + 40 + 20, 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 17), 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 18), 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 19), 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 2));
+        editor.putFloat("Uncompressed SellMo" + (40 + 20), 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 2));
 
-        editor.putFloat("Uncompressed BuyMo" + 40 + 1, 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 2, 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 3, 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 4, 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 1), 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 2), 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 3), 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 4), 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 2));
 
-        editor.putFloat("Uncompressed BuyMo" + 40 + 5, 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 6, 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 7, 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 8, 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 5), 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 6), 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 7), 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 8), 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 2));
 
-        editor.putFloat("Uncompressed BuyMo" + 40 + 9, 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 10, 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 11, 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 12, 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 9), 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 10), 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 11), 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 12), 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 2));
 
-        editor.putFloat("Uncompressed BuyMo" + 40 + 13, 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 14, 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 15, 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 16, 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 13), 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 14), 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 15), 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 16), 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 2));
 
-        editor.putFloat("Uncompressed BuyMo" + 40 + 17, 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 18, 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 19, 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 2));
-        editor.putFloat("Uncompressed BuyMo" + 40 + 20, 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 17), 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 18), 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 19), 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 2));
+        editor.putFloat("Uncompressed BuyMo" + (40 + 20), 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 2));
 
-        editor.putFloat("Compressed SellMo" + 40 + 1, 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 2, 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 3, 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 4, 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 1), 0.01f * ((s34 * 6000 + s35 * 6000 + s36 * 400 + s16633 * 65) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 2), 0.01f * ((s34 * 10000 + s35 * 2000 + s36 * 400 + s16636 * 65) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 3), 0.01f * ((s34 * 8000 + s35 * 8000 + s36 * 400 + s16635 * 65) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 4), 0.01f * ((s34 * 4000 + s35 * 6000 + s36 * 400 + s16634 * 65) * 2));
 
-        editor.putFloat("Compressed SellMo" + 40 + 5, 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 6, 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 7, 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 8, 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 5), 0.01f * ((s34 * 7500 + s35 * 10000 + s36 * 500 + s16640 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 6), 0.01f * ((s34 * 10000 + s35 * 7500 + s36 * 500 + s16639 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 7), 0.01f * ((s34 * 12500 + s35 * 5000 + s36 * 500 + s16637 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 8), 0.01f * ((s34 * 15000 + s35 * 2500 + s36 * 500 + s16638 * 40) * 2));
 
-        editor.putFloat("Compressed SellMo" + 40 + 9, 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 10, 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 11, 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 12, 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 9), 0.01f * ((s35 * 5000 + s36 * 1250 + s37 * 750 + s38 * 50 + s16633 * 10 + s16641 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 10), 0.01f * ((s34 * 5000 + s36 * 1500 + s37 * 500 + s38 * 50 + s16634 * 10 + s16643 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 11), 0.01f * ((s34 * 5000 + s36 * 1000 + s37 * 1000 + s39 * 50 + s16635 * 10 + s16644 * 40) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 12), 0.01f * ((s35 * 5000 + s36 * 750 + s37 * 1250 + s39 * 50 + s16636 * 10 + s16642 * 40) * 2));
 
-        editor.putFloat("Compressed SellMo" + 40 + 13, 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 14, 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 15, 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 16, 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 13), 0.01f * ((s36 * 1000 + s37 * 1250 + s39 * 50 + s16634 * 15 + s16640 * 10 + s16649 * 50) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 14), 0.01f * ((s36 * 1500 + s37 * 750 + s40 * 50 + s16635 * 15 + s16637 * 10 + s16646 * 50) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 15), 0.01f * ((s36 * 1250 + s37 * 1000 + s39 * 50 + s16633 * 15 + s16639 * 10 + s16647 * 50) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 16), 0.01f * ((s36 * 1750 + s37 * 500 + s40 * 50 + s16636 * 15 + s16638 * 10 + s16648 * 50) * 2));
 
-        editor.putFloat("Compressed SellMo" + 40 + 17, 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 18, 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 19, 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 2));
-        editor.putFloat("Compressed SellMo" + 40 + 20, 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 17), 0.01f * ((s38 * 100 + s39 * 200 + s40 * 50 + s16633 * 20 + s16639 * 20 + s16644 * 10 + s16652 * 22) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 18), 0.01f * ((s38 * 50 + s39 * 150 + s40 * 150 + s16635 * 20 + s16637 * 20 + s16641 * 10 + s16651 * 22) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 19), 0.01f * ((s38 * 200 + s39 * 100 + s40 * 50 + s16634 * 20 + s16640 * 20 + s16642 * 10 + s16650 * 22) * 2));
+        editor.putFloat("Compressed SellMo" + (40 + 20), 0.01f * ((s38 * 50 + s39 * 100 + s40 * 200 + s16636 * 20 + s16638 * 20 + s16643 * 10 + s16653 * 22) * 2));
 
-        editor.putFloat("Compressed BuyMo" + 40 + 1, 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 2, 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 3, 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 4, 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 1), 0.01f * ((b34 * 6000 + b35 * 6000 + b36 * 400 + b16633 * 65) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 2), 0.01f * ((b34 * 10000 + b35 * 2000 + b36 * 400 + b16636 * 65) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 3), 0.01f * ((b34 * 8000 + b35 * 8000 + b36 * 400 + b16635 * 65) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 4), 0.01f * ((b34 * 4000 + b35 * 6000 + b36 * 400 + b16634 * 65) * 2));
 
-        editor.putFloat("Compressed BuyMo" + 40 + 5, 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 6, 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 7, 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 8, 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 5), 0.01f * ((b34 * 7500 + b35 * 10000 + b36 * 500 + b16640 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 6), 0.01f * ((b34 * 10000 + b35 * 7500 + b36 * 500 + b16639 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 7), 0.01f * ((b34 * 12500 + b35 * 5000 + b36 * 500 + b16637 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 8), 0.01f * ((b34 * 15000 + b35 * 2500 + b36 * 500 + b16638 * 40) * 2));
 
-        editor.putFloat("Compressed BuyMo" + 40 + 9, 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 10, 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 11, 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 12, 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 9), 0.01f * ((b35 * 5000 + b36 * 1250 + b37 * 750 + b38 * 50 + b16633 * 10 + b16641 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 10), 0.01f * ((b34 * 5000 + b36 * 1500 + b37 * 500 + b38 * 50 + b16634 * 10 + b16643 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 11), 0.01f * ((b34 * 5000 + b36 * 1000 + b37 * 1000 + b39 * 50 + b16635 * 10 + b16644 * 40) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 12), 0.01f * ((b35 * 5000 + b36 * 750 + b37 * 1250 + b39 * 50 + b16636 * 10 + b16642 * 40) * 2));
 
-        editor.putFloat("Compressed BuyMo" + 40 + 13, 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 14, 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 15, 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 16, 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 13), 0.01f * ((b36 * 1000 + b37 * 1250 + b39 * 50 + b16634 * 15 + b16640 * 10 + b16649 * 50) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 14), 0.01f * ((b36 * 1500 + b37 * 750 + b40 * 50 + b16635 * 15 + b16637 * 10 + b16646 * 50) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 15), 0.01f * ((b36 * 1250 + b37 * 1000 + b39 * 50 + b16633 * 15 + b16639 * 10 + b16647 * 50) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 16), 0.01f * ((b36 * 1750 + b37 * 500 + b40 * 50 + b16636 * 15 + b16638 * 10 + b16648 * 50) * 2));
 
-        editor.putFloat("Compressed BuyMo" + 40 + 17, 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 18, 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 19, 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 2));
-        editor.putFloat("Compressed BuyMo" + 40 + 20, 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 17), 0.01f * ((b38 * 100 + b39 * 200 + b40 * 50 + b16633 * 20 + b16639 * 20 + b16644 * 10 + b16652 * 22) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 18), 0.01f * ((b38 * 50 + b39 * 150 + b40 * 150 + b16635 * 20 + b16637 * 20 + b16641 * 10 + b16651 * 22) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 19), 0.01f * ((b38 * 200 + b39 * 100 + b40 * 50 + b16634 * 20 + b16640 * 20 + b16642 * 10 + b16650 * 22) * 2));
+        editor.putFloat("Compressed BuyMo" + (40 + 20), 0.01f * ((b38 * 50 + b39 * 100 + b40 * 200 + b16636 * 20 + b16638 * 20 + b16643 * 10 + b16653 * 22) * 2));
 
         editor.commit();
 
