@@ -104,13 +104,13 @@ public class GasPrices extends BasePrices {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; !(i > nums.length); i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; !(i > nums.length); i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -118,7 +118,7 @@ public class GasPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; !(i > nums.length); i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
@@ -126,7 +126,7 @@ public class GasPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; !(i > nums.length); i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
