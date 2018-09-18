@@ -583,7 +583,7 @@ public class GasPrices extends BasePrices {
                         PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)));
                         String VolG[]=getResources().getStringArray(R.array.VolG);
                         PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("AmountGas", "10"))*Float.parseFloat(sharedPref.getString("MinG", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])/1000000/Float.parseFloat(sharedPref.getString("TimeGas", "30")))+"M");
+                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * 3600 * Float.parseFloat(sharedPref.getString("AmountGas", "10")) * Float.parseFloat(sharedPref.getString("MinG", "1")) * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00) / 1000000 / Float.parseFloat(sharedPref.getString("TimeGas", "30"))) + "M");
                 }
             }
         }
