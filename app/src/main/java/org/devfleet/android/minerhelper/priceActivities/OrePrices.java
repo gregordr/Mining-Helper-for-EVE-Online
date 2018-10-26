@@ -28,7 +28,6 @@ public class OrePrices extends BasePrices {
 
     private final int[] Sort = new int[49];
     private GreenAdapter mAdapter;
-    private RecyclerView mNumbersList;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,13 +39,12 @@ public class OrePrices extends BasePrices {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         base = "https://market.fuzzwork.co.uk/aggregates/?types=22,1223,1225,1232,1229,21,1231,1226,20,11396,1227,18,1224,1228,19,1230,17425,17428,17432,17436,17865,17440,17444,17448,17452,17869,17867,17455,17459,17463,17466,17470,17426,17429,17433,17437,17866,17441,17445,17449,17453,17870,17868,17456,17460,17464,17467,17471,28367,28388,28391,28394,28397,28401,28403,28406,28410,28413,28416,28422,28424,28429,28420,28432,28385,28389,28392,28395,28398,28400,28404,28407,28409,28412,28415,28421,28425,28427,28418,28430,28387,28390,28393,28396,28399,28402,28405,28408,28411,28414,28417,28423,28426,28428,28419,28431";
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mNumbersList = findViewById(R.id.RecV);
+        RecyclerView mNumbersList = findViewById(R.id.RecV);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
@@ -101,18 +99,18 @@ public class OrePrices extends BasePrices {
         } catch (Throwable ignored) {
         }
 
-        String[] nums = getResources().getStringArray(R.array .nums);
+        String[] nums = getResources().getStringArray(R.array.nums);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=49; i++) {
+        for (int i = 1; i <= nums.length / 2; i++) {
             try {
                 editor.putFloat("Uncompressed Sell" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i!=49; i++) {
+        for (int i = 1; i <= nums.length / 2; i++) {
             try {
                 editor.putFloat("Uncompressed Buy" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -120,7 +118,7 @@ public class OrePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=49; i++) {
+        for (int i = 1; i <= nums.length / 2; i++) {
             try {
                 editor.putFloat("Compressed Sell" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+48-1]).getJSONObject("sell").get("min")))/100);
             } catch (JSONException e) {
@@ -128,7 +126,7 @@ public class OrePrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=49; i++) {
+        for (int i = 1; i <= nums.length / 2; i++) {
             try {
                 editor.putFloat("Compressed Buy" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i+48-1]).getJSONObject("buy").get("max")))/100);
             } catch (JSONException e) {

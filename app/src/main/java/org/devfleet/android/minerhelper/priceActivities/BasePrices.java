@@ -113,6 +113,9 @@ public abstract class BasePrices extends AppCompatActivity implements SharedPref
             case R.id.action_mineral:
                 launchMinerals();
                 return true;
+            case R.id.action_moon:
+                launchMoon();
+                return true;
             case R.id.action_about:
                 launchAbout();
                 return true;
@@ -181,6 +184,19 @@ public abstract class BasePrices extends AppCompatActivity implements SharedPref
         editor.commit();
 
         Intent changeIntent = new Intent(this, MineralPrices.class);
+        finish();
+        startActivity(changeIntent);
+        this.overridePendingTransition(0, 0);
+    }
+
+    private void launchMoon() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        editor.putString("launchName", "Moon");
+        editor.commit();
+
+        Intent changeIntent = new Intent(this, MoonPrices.class);
         finish();
         startActivity(changeIntent);
         this.overridePendingTransition(0, 0);

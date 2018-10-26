@@ -28,7 +28,6 @@ public class GasPrices extends BasePrices {
 
     private final int[] Sort = new int[26];
     private GreenAdapter mAdapter;
-    private RecyclerView mNumbersList;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,12 +44,12 @@ public class GasPrices extends BasePrices {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        mNumbersList = findViewById(R.id.RecV);
+        RecyclerView mNumbersList = findViewById(R.id.RecV);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
         mAdapter = new GreenAdapter();
-        mNumbersList.addItemDecoration(new GasPrices.DividerItemDecoration(this));
+        mNumbersList.addItemDecoration(new DividerItemDecoration(this));
         mNumbersList.setAdapter(mAdapter);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -96,26 +95,22 @@ public class GasPrices extends BasePrices {
     public void getInfo(String s) {
         JSONObject obj = null;
         try {
-
             obj = new JSONObject(s);
-
-
         } catch (Throwable ignored) {
-
         }
 
-        String[] nums = getResources().getStringArray(R.array .numsG);
+        String[] nums = getResources().getStringArray(R.array.numsG);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
 
-        for (int i = 1; i!=26; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException ignored) {
             }
         }
-        for (int i = 1; i!=26; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Uncompressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -123,7 +118,7 @@ public class GasPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=26; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed SellG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("sell").get("min"))));
             } catch (JSONException e) {
@@ -131,7 +126,7 @@ public class GasPrices extends BasePrices {
             }
         }
 
-        for (int i = 1; i!=26; i++) {
+        for (int i = 1; i <= nums.length; i++) {
             try {
                 editor.putFloat("Compressed BuyG" + i, Float.parseFloat(String.valueOf(obj.getJSONObject(nums[i-1]).getJSONObject("buy").get("max"))));
             } catch (JSONException e) {
@@ -588,7 +583,7 @@ public class GasPrices extends BasePrices {
                         PPI.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)));
                         String VolG[]=getResources().getStringArray(R.array.VolG);
                         PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])));
-                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*3600*Float.parseFloat(sharedPref.getString("AmountGas", "10"))*Float.parseFloat(sharedPref.getString("MinG", "1"))*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])/1000000/Float.parseFloat(sharedPref.getString("TimeGas", "30")))+"M");
+                        PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * 3600 * Float.parseFloat(sharedPref.getString("AmountGas", "10")) * Float.parseFloat(sharedPref.getString("MinG", "1")) * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00) / 1000000 / Float.parseFloat(sharedPref.getString("TimeGas", "30"))) + "M");
                 }
             }
         }

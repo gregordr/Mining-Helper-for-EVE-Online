@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:negativeButtonText=""
+        android:summary="%s"
+        android:entries="@array/Systems"
+        android:entryValues="@array/Systems"
+        android:key="SystemNames"
+        android:title="System?"></ListPreference>
+    <ListPreference
+        android:negativeButtonText=""
+        android:summary="%s"
+        android:entries="@array/BS"
+        android:entryValues="@array/BS"
+        android:key="BS"
+        android:title="What prices?"></ListPreference>
+
+    <EditTextPreference
+        android:defaultValue="100"
+        android:key="Perc"
+        android:title="@string/Perc"
+        android:inputType="numberDecimal" />
+
+    <PreferenceScreen
+        android:summary="@string/CustomText"
+        android:title="@string/Custom">
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo1"
+            android:title="Bitumens" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo2"
+            android:title="Coesite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo3"
+            android:title="Sylvite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo4"
+            android:title="Zeolites" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo5"
+            android:title="Cobaltite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo6"
+            android:title="Euxenite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo7"
+            android:title="Scheelite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo8"
+            android:title="Titanite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo9"
+            android:title="Chromite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo10"
+            android:title="Otavite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo11"
+            android:title="Sperrylite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo12"
+            android:title="Vanadinite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo13"
+            android:title="Carnotite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo14"
+            android:title="Cinnabar" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo15"
+            android:title="Pollucite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo16"
+            android:title="Zircon" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo17"
+            android:title="Loparite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo18"
+            android:title="Monazite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo19"
+            android:title="Xenotime" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo20"
+            android:title="Ytterbite" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo21"
+            android:title="Brimful Bitumens" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo22"
+            android:title="Brimful Coesite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo23"
+            android:title="Brimful Sylvite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo24"
+            android:title="Brimful Zeolites" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo25"
+            android:title="Copious Cobaltite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo26"
+            android:title="Copious Euxenite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo27"
+            android:title="Copious Scheelite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo28"
+            android:title="Copious Titanite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo29"
+            android:title="Lavish Chromite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo30"
+            android:title="Lavish Otavite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo31"
+            android:title="Lavish Sperrylite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo32"
+            android:title="Lavish Vanadinite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo33"
+            android:title="Replete Carnotite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo34"
+            android:title="Replete Cinnabar" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo35"
+            android:title="Replete Pollucite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo36"
+            android:title="Replete Zircon" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo37"
+            android:title="Bountiful Loparite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo38"
+            android:title="Bountiful Monazite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo39"
+            android:title="Bountiful Xenotime" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo40"
+            android:title="Bountiful Ytterbite" />
+
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo41"
+            android:title="Glistening Bitumens" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo42"
+            android:title="Glistening Coesite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo43"
+            android:title="Glistening Sylvite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo44"
+            android:title="Glistening Zeolites" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo45"
+            android:title="Twinkling Cobaltite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo46"
+            android:title="Twinkling Euxenite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo47"
+            android:title="Twinkling Scheelite" />
+        <EditTextPreference
+            android:key="CustomSMo48"
+            android:title="Twinkling Titanite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo49"
+            android:title="Shimmering Chromite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo50"
+            android:title="Shimmering Otavite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo51"
+            android:title="Shimmering Sperrylite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo52"
+            android:title="Shimmering Vanadinite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo53"
+            android:title="Glowing Carnotite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo54"
+            android:title="Glowing Cinnabar"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:key="CustomSMo55"
+            android:title="Glowing Pollucite"
+            android:inputType="numberDecimal" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo56"
+            android:title="Glowing Zircon" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo57"
+            android:title="Shining Loparite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo58"
+            android:title="Shining Monazite" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo59"
+            android:title="Shining Xenotime" />
+        <EditTextPreference
+            android:inputType="numberDecimal"
+            android:key="CustomSMo60"
+            android:title="Shining Ytterbite" />
+
+    </PreferenceScreen>
+
+    <EditTextPreference
+        android:defaultValue="1500"
+        android:inputType="numberDecimal"
+        android:key="MPC"
+        android:title="@string/MiningP" />
+
+    <EditTextPreference
+        android:defaultValue="120"
+        android:inputType="numberDecimal"
+        android:key="Time"
+        android:title="@string/Time" />
+
+    <EditTextPreference
+        android:defaultValue="1"
+        android:inputType="number"
+        android:key="Min"
+        android:title="@string/Min" />
+
+
+</PreferenceScreen>
