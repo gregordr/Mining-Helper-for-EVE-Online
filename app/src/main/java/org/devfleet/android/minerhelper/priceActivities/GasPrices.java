@@ -14,7 +14,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.devfleet.android.minerhelper.R;
 import org.devfleet.android.minerhelper.selectionSettings.GasSelection;
@@ -367,8 +369,6 @@ public class GasPrices extends BasePrices {
             default:
                 break;
         }
-
-
         mAdapter.notifyDataSetChanged();
     }
 
@@ -383,7 +383,7 @@ public class GasPrices extends BasePrices {
 
     public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHolder> {
 
-        private final String TAG = GasPrices.GreenAdapter.class.getSimpleName();
+        private Toast toastMessage;
         final SharedPreferences sharedPref;
 
         GreenAdapter() {
@@ -422,10 +422,8 @@ public class GasPrices extends BasePrices {
 
         @Override
         public void onBindViewHolder(GasPrices.GreenAdapter.NumberViewHolder holder, int position) {
-
             holder.bind(position);
         }
-
 
         @Override
         public int getItemCount() {
@@ -539,6 +537,10 @@ public class GasPrices extends BasePrices {
             return i;
         }
 
+        private String refineMessage(int i) {
+            return "Refines into: \n" +
+        }
+
         class NumberViewHolder extends RecyclerView.ViewHolder {
 
 
@@ -548,6 +550,8 @@ public class GasPrices extends BasePrices {
             final TextView PPH;
             final String[] Name = getResources().getStringArray(R.array.NamesG);
 
+            final ImageView Ref;
+
             NumberViewHolder(View itemView) {
                 super(itemView);
 
@@ -555,9 +559,10 @@ public class GasPrices extends BasePrices {
                 PPI = itemView.findViewById(R.id.PPI);
                 PPV = itemView.findViewById(R.id.PPV);
                 PPH = itemView.findViewById(R.id.PPH);
+                Ref = itemView.findViewById(R.id.refine);
             }
 
-            void bind(int listIndex) {
+            void bind(final int listIndex) {
                 switch (listIndex) {
                     case 0:
                         listItemNumberView.setText(Status);
@@ -584,6 +589,15 @@ public class GasPrices extends BasePrices {
                         String VolG[]=getResources().getStringArray(R.array.VolG);
                         PPV.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100"))/100*sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell")+"G"+String.valueOf(Sort[listIndex]), (float) 0.00)/Float.parseFloat(VolG[Sort[listIndex]])));
                         PPH.setText(String.format("%.2f", Float.parseFloat(sharedPref.getString("Perc", "100")) / 100 * 3600 * Float.parseFloat(sharedPref.getString("AmountGas", "10")) * Float.parseFloat(sharedPref.getString("MinG", "1")) * sharedPref.getFloat(sharedPref.getString("BS", "Compressed Sell") + "G" + String.valueOf(Sort[listIndex]), (float) 0.00) / 1000000 / Float.parseFloat(sharedPref.getString("TimeGas", "30"))) + "M");
+                        Ref.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+                                if (toastMessage != null) {
+                                    toastMessage.cancel();
+                                }
+                                toastMessage = Toast.makeText(getApplicationContext(), refineMessage(Sort[listIndex]), Toast.LENGTH_LONG);
+                                toastMessage.show();
+                            }
+                        });
                 }
             }
         }

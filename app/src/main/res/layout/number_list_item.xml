@@ -12,6 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/refine"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/ic_refine"
+            tools:layout_editor_absoluteX="2dp" />
+
         <Space
             android:id="@+id/ooo"
             android:layout_width="wrap_content"
@@ -90,11 +99,10 @@
             android:id="@+id/TV1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:text="Name"
             android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="2dp" />
 
     </android.support.constraint.ConstraintLayout>
 
