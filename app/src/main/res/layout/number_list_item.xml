@@ -13,9 +13,8 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
-        app:contentPadding="0dp">
+        app:cardCornerRadius="7dp"
+        app:cardElevation="7dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
