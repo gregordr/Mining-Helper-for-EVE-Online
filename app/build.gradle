@@ -7,7 +7,7 @@ android {
         applicationId "com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.eveminer"
         targetSdkVersion 28
         minSdkVersion 15
-        versionCode 17
+        versionCode 18
         versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
