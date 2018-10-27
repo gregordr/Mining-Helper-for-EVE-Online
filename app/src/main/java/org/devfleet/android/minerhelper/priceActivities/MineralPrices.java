@@ -49,7 +49,6 @@ public class MineralPrices extends BasePrices {
         mNumbersList.setLayoutManager(layoutManager);
         mNumbersList.setHasFixedSize(true);
         mAdapter = new GreenAdapter();
-        mNumbersList.addItemDecoration(new DividerItemDecoration(this));
         mNumbersList.setAdapter(mAdapter);
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
