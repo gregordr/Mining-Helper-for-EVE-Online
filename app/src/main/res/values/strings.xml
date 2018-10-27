@@ -34,6 +34,6 @@
     <string name="Custom">Add custom prices</string>
     <string name="CustomText">Make sure to select Custom in Prices option</string>
     <string name="Time">Duration of cycle in seconds</string>
-    <string name="Min">Number of Miners</string>
+    <string name="Min">Number of mining modules</string>
     <string name="action_ice">Go to ice</string>
 </resources>
