@@ -5,9 +5,10 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.eveminer"
+        targetSdkVersion 28
         minSdkVersion 15
-        versionCode 15
-        versionName "1.0"
+        versionCode 17
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
