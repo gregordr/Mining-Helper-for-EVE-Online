@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.kobakei.ratethisapp.RateThisApp;
 
 import org.devfleet.android.minerhelper.About;
 import org.devfleet.android.minerhelper.R;
@@ -22,6 +25,12 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public abstract class BasePrices extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        RateThisApp.showRateDialogIfNeeded(this);
+    }
 
     private final Handler repeatedTVUpdater = new Handler();
     private final Handler repeatedUpdater = new Handler();

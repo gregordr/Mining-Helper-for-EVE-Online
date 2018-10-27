@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.kobakei.ratethisapp.RateThisApp;
+
 import org.devfleet.android.minerhelper.priceActivities.GasPrices;
 import org.devfleet.android.minerhelper.priceActivities.IcePrices;
 import org.devfleet.android.minerhelper.priceActivities.MineralPrices;
@@ -15,6 +17,8 @@ public class LaunchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        RateThisApp.onCreate(this);
 
         String launchName = PreferenceManager.getDefaultSharedPreferences(this).getString("launchName", "Ore");
         Intent launchIntent;
