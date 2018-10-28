@@ -243,10 +243,10 @@ public class IceSelection extends AppCompatActivity {
                     case "C":
                         editor.putBoolean("White_Glaze", true);
                         break;
-                    case "M":
+                    case "G":
                         editor.putBoolean("Blue_Ice", true);
                         break;
-                    case "G":
+                    case "M":
                         editor.putBoolean("Glacial_Mass", true);
                         break;
                     case "All":
@@ -267,11 +267,11 @@ public class IceSelection extends AppCompatActivity {
                         editor.putBoolean("White_Glaze", true);
                         editor.putBoolean("Glare_Crust", true);
                         break;
-                    case "M":
+                    case "G":
                         editor.putBoolean("Blue_Ice", true);
                         editor.putBoolean("Glare_Crust", true);
                         break;
-                    case "G":
+                    case "M":
                         editor.putBoolean("Glacial_Mass", true);
                         editor.putBoolean("Glare_Crust", true);
                         break;
@@ -296,12 +296,12 @@ public class IceSelection extends AppCompatActivity {
                         editor.putBoolean("Glare_Crust", true);
                         editor.putBoolean("Dark_Glitter", true);
                         break;
-                    case "M":
+                    case "G":
                         editor.putBoolean("Blue_Ice", true);
                         editor.putBoolean("Glare_Crust", true);
                         editor.putBoolean("Dark_Glitter", true);
                         break;
-                    case "G":
+                    case "M":
                         editor.putBoolean("Glacial_Mass", true);
                         editor.putBoolean("Glare_Crust", true);
                         break;
@@ -333,7 +333,7 @@ public class IceSelection extends AppCompatActivity {
                         editor.putBoolean("Krystallos", true);
                         editor.putBoolean("Pristine_White_Glaze", true);
                         break;
-                    case "M":
+                    case "G":
                         editor.putBoolean("Blue_Ice", true);
                         editor.putBoolean("Glare_Crust", true);
                         editor.putBoolean("Dark_Glitter", true);
@@ -341,7 +341,7 @@ public class IceSelection extends AppCompatActivity {
                         editor.putBoolean("Krystallos", true);
                         editor.putBoolean("Thick_Blue_Ice", true);
                         break;
-                    case "G":
+                    case "M":
                         editor.putBoolean("Glacial_Mass", true);
                         editor.putBoolean("Glare_Crust", true);
                         editor.putBoolean("Gelidus", true);
