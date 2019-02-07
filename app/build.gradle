@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "com.randomlettersandnumbers15645151gd65fg16d5fgs46r84tserg51f3d21ger6.eveminer"
+        applicationId "com.GTP.eveminer"
         targetSdkVersion 28
         minSdkVersion 15
         versionCode 19
